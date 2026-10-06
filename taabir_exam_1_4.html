@@ -30,8 +30,8 @@ textarea{width:100%;min-height:160px;border:2px solid var(--line);border-radius:
 
 <section id="home" class="card">
 <div class="pill">اختبار تجريبي شامل</div>
-<p><b>32 سؤالا موزعة بالتساوي على الدروس الأربعة.</b></p>
-<p>16 سؤال اختيار، منها أسئلة بإجابة واحدة وأسئلة بإجابات متعددة، ثم 16 سؤالا كتابيا.</p>
+<p><b>50 سؤالا من الدروس الأربعة.</b></p>
+<p>32 سؤال اختيار، منها أسئلة بإجابة واحدة وأسئلة بإجابات متعددة، ثم 18 سؤالا كتابيا.</p>
 <p class="small">الأسئلة والاختيارات بدون تشكيل كما في الاختبار، أما التصحيح والإجابات النموذجية فبالتشكيل.</p>
 <div class="menu">
 <button class="btn" onclick="startExam()">ابدأ الاختبار</button>
@@ -131,22 +131,29 @@ written:[
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
 function pickN(a,n){return shuffle(a).slice(0,n)}
 function show(id){["home","quiz","result"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden")}
-let state={items:[],i:0,objScore:0,writtenScore:0,selected:null,selectedMany:[],checked:false,breakdown:{}};
+let state={items:[],i:0,objScore:0,writtenScore:0,selected:null,selectedMany:[],checked:false,breakdown:{},objectiveCount:32};
 
 function startExam(){
   let objective=[],written=[];
-  state.breakdown={1:{o:0,w:0},2:{o:0,w:0},3:{o:0,w:0},4:{o:0,w:0}};
+  const extraWrittenLessons=shuffle([1,2,3,4]).slice(0,2);
+  state.breakdown={
+    1:{o:0,w:0,omax:8,wmax:extraWrittenLessons.includes(1)?5:4},
+    2:{o:0,w:0,omax:8,wmax:extraWrittenLessons.includes(2)?5:4},
+    3:{o:0,w:0,omax:8,wmax:extraWrittenLessons.includes(3)?5:4},
+    4:{o:0,w:0,omax:8,wmax:extraWrittenLessons.includes(4)?5:4}
+  };
   for(let l=1;l<=4;l++){
-    objective.push(...pickN(pools[l].mcq,3).map(x=>({type:"mcq",lesson:l,...x})));
-    objective.push(...pickN(pools[l].multi,1).map(x=>({type:"multi",lesson:l,...x})));
-    written.push(...pickN(pools[l].written,4).map(x=>({type:"written",lesson:l,...x})));
+    objective.push(...shuffle(pools[l].mcq).map(x=>({type:"mcq",lesson:l,...x})));
+    objective.push(...shuffle(pools[l].multi).map(x=>({type:"multi",lesson:l,...x})));
+    written.push(...pickN(pools[l].written,state.breakdown[l].wmax).map(x=>({type:"written",lesson:l,...x})));
   }
+  state.objectiveCount=objective.length;
   state.items=[...shuffle(objective),...shuffle(written)];
   state.i=0;state.objScore=0;state.writtenScore=0;state.selected=null;state.selectedMany=[];state.checked=false;
   show("quiz");render();
 }
 function header(){
-  const total=state.items.length,p=Math.round((state.i/total)*100),part=state.i<16?"القسم الأول: أسئلة الاختيار":"القسم الثاني: الإجابات الكتابية";
+  const total=state.items.length,p=Math.round((state.i/total)*100),part=state.i<state.objectiveCount?"القسم الأول: أسئلة الاختيار":"القسم الثاني: الإجابات الكتابية";
   return `<div class="toprow"><span class="pill">${part}</span><span class="small">${state.i+1} / ${total}</span></div><div class="progress"><div class="bar" style="width:${p}%"></div></div>`;
 }
 function render(){
@@ -209,14 +216,14 @@ function finish(){
   show("result");
   const total=state.objScore+state.writtenScore;
   let rows="";
-  for(let l=1;l<=4;l++) rows+=`<div class="lessonrow"><b>الدرس ${["الأول","الثاني","الثالث","الرابع"][l-1]}</b><span>الاختيار: ${state.breakdown[l].o}/4</span><span>الكتابي: ${state.breakdown[l].w}/4</span></div>`;
+  for(let l=1;l<=4;l++) rows+=`<div class="lessonrow"><b>الدرس ${["الأول","الثاني","الثالث","الرابع"][l-1]}</b><span>الاختيار: ${state.breakdown[l].o}/${state.breakdown[l].omax}</span><span>الكتابي: ${state.breakdown[l].w}/${state.breakdown[l].wmax}</span></div>`;
   document.getElementById("result").innerHTML=`
   <h2>نتيجة الاختبار الشامل</h2>
   <div class="stats">
-    <div class="stat"><b>أسئلة الاختيار</b><div class="score">${state.objScore}/16</div></div>
-    <div class="stat"><b>الإجابات الكتابية</b><div class="score">${state.writtenScore}/16</div></div>
+    <div class="stat"><b>أسئلة الاختيار</b><div class="score">${state.objScore}/32</div></div>
+    <div class="stat"><b>الإجابات الكتابية</b><div class="score">${state.writtenScore}/18</div></div>
   </div>
-  <div class="stat"><b>المجموع</b><div class="score">${total}/32</div></div>
+  <div class="stat"><b>المجموع</b><div class="score">${total}/50</div></div>
   <h3>النتيجة حسب الدرس</h3>${rows}
   <div class="menu" style="margin-top:16px"><button class="btn" onclick="startExam()">أعد الاختبار بأسئلة جديدة</button><a class="btn ghost" href="index.html#taabir">الرجوع إلى دروس التعبير</a></div>`;
 }
