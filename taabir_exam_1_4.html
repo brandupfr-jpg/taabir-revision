@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>اختبار التعبير الشامل - الدروس 1 إلى 4</title>
+<style>
+:root{--bg:#f7f5ef;--card:#fff;--ink:#1f2a24;--muted:#6f7a73;--accent:#2f6b4f;--accent2:#e6efe9;--good:#1f7a4d;--bad:#a33a3a;--line:#dfe6e1}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+.wrap{max-width:780px;margin:auto;padding:18px 14px 40px}.hero{background:linear-gradient(135deg,#234c39,#3c7659);color:#fff;padding:25px 20px;border-radius:24px;box-shadow:0 10px 30px rgba(31,42,36,.12)}
+.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;opacity:.92}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 8px 22px rgba(31,42,36,.06)}
+.btn{border:0;border-radius:16px;padding:15px 16px;font-size:17px;font-weight:700;cursor:pointer;background:var(--accent);color:#fff;width:100%;text-decoration:none;display:block;text-align:center}.btn.secondary{background:var(--accent2);color:var(--accent)}.btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--line)}.btn:disabled{opacity:.5}
+.menu{display:grid;gap:10px}.option{display:block;width:100%;text-align:right;background:#fff;border:2px solid var(--line);padding:14px;border-radius:14px;margin:10px 0;font-size:17px;cursor:pointer}.option.selected{border-color:var(--accent);background:#f0f6f2}.option.correct{border-color:var(--good);background:#eef8f2}.option.wrong{border-color:var(--bad);background:#fff0f0}
+.toprow{display:flex;justify-content:space-between;gap:12px;align-items:center}.small{font-size:14px;color:var(--muted)}.progress{height:9px;background:#e8ece9;border-radius:999px;overflow:hidden;margin:10px 0 18px}.bar{height:100%;background:var(--accent)}
+.q{font-size:22px;font-weight:800;margin:8px 0 12px}.feedback{padding:13px 14px;border-radius:14px;margin-top:14px;font-weight:700}.feedback.good{background:#eef8f2;color:var(--good)}.feedback.bad{background:#fff0f0;color:var(--bad)}.explain{font-weight:500;color:var(--ink);margin-top:6px}
+textarea{width:100%;min-height:160px;border:2px solid var(--line);border-radius:14px;padding:14px;font-size:18px;direction:rtl;resize:vertical}.model{background:#f2f6f3;border-right:4px solid var(--accent);padding:14px;border-radius:12px;margin-top:12px}
+.hidden{display:none!important}.pill{display:inline-block;background:var(--accent2);color:var(--accent);padding:5px 10px;border-radius:999px;font-weight:700;font-size:13px}.score{font-size:40px;font-weight:900;color:var(--accent);text-align:center;margin:14px 0}.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+.navline{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.navlink{color:var(--accent);text-decoration:none;font-weight:800;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.stat{background:#f7faf8;border:1px solid var(--line);border-radius:15px;padding:13px;text-align:center}.lessonrow{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}.lessonrow b{font-size:14px}
+@media(max-width:520px){.lessonrow{grid-template-columns:1fr 1fr 1fr;font-size:12px}.hero h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="navline"><a class="navlink" href="index.html#taabir">دروس التعبير</a><a class="navlink" href="index.html">الرئيسية</a></div>
+<section class="hero">
+<h1>اختبار شامل - التعبير</h1>
+<p>الدروس من الأول إلى الرابع</p>
+</section>
+
+<section id="home" class="card">
+<div class="pill">اختبار تجريبي شامل</div>
+<p><b>32 سؤالا موزعة بالتساوي على الدروس الأربعة.</b></p>
+<p>16 سؤال اختيار، منها أسئلة بإجابة واحدة وأسئلة بإجابات متعددة، ثم 16 سؤالا كتابيا.</p>
+<p class="small">الأسئلة والاختيارات بدون تشكيل كما في الاختبار، أما التصحيح والإجابات النموذجية فبالتشكيل.</p>
+<div class="menu">
+<button class="btn" onclick="startExam()">ابدأ الاختبار</button>
+<a class="btn ghost" href="index.html#taabir">الرجوع إلى دروس التعبير</a>
+</div>
+</section>
+
+<section id="quiz" class="card hidden"></section>
+<section id="result" class="card hidden"></section>
+<div class="footer">اختبار التعبير الشامل - المستوى الرابع</div>
+</div>
+
+<script>
+const pools={
+1:{
+mcq:[
+{q:"من هم الأقليات المسلمة؟",a:"فئة قليلة من المسلمين تعيش بين أغلبية غير مسلمة",o:["فئة قليلة من المسلمين تعيش بين أغلبية غير مسلمة","جماعة كبيرة من المسلمين في دولة إسلامية","طلاب مسلمون في المدارس","مسلمون يعيشون في الجزيرة العربية فقط"],ca:"فِئَةٌ قَلِيلَةٌ مِنَ الْمُسْلِمِينَ تَعِيشُ بَيْنَ أَغْلَبِيَّةٍ غَيْرِ مُسْلِمَةٍ.",e:"هٰذَا هُوَ تَعْرِيفُ الْأَقَلِّيَّاتِ الْإِسْلَامِيَّةِ فِي الدَّرْسِ."},
+{q:"في أي قارة تتركز أكثر الأقليات الإسلامية؟",a:"آسيا",o:["آسيا","أوروبا","أفريقيا","أستراليا"],ca:"قَارَّةُ آسِيَا.",e:"يَذْكُرُ الدَّرْسُ أَنَّ أَكْثَرَ الْأَقَلِّيَّاتِ الْإِسْلَامِيَّةِ تَعِيشُ فِي آسِيَا."},
+{q:"كيف يعيش معظم أفراد الأقليات الإسلامية كما في الدرس؟",a:"في فقر ومعيشة صعبة",o:["في فقر ومعيشة صعبة","في غنى دائم","في دول إسلامية","في رفاهية كاملة"],ca:"فِي فَقْرٍ وَمَعِيشَةٍ صَعْبَةٍ.",e:"يُبَيِّنُ الدَّرْسُ صُعُوبَةَ أَحْوَالِ كَثِيرٍ مِنْهُمْ."},
+{q:"ما أهمية الأقليات الإسلامية؟",a:"هي لسان ناطق بالإسلام في تلك المجتمعات",o:["هي لسان ناطق بالإسلام في تلك المجتمعات","لا أهمية لها","دورها اقتصادي فقط","واجبها الهجرة فقط"],ca:"هِيَ لِسَانٌ نَاطِقٌ بِالْإِسْلَامِ فِي تِلْكَ الْمُجْتَمَعَاتِ.",e:"هٰذِهِ مِنْ أَهَمِّ الْعِبَارَاتِ فِي الدَّرْسِ."},
+{q:"ما واجب الدول الإسلامية نحو الأقليات؟",a:"تقديم العون المادي والمعنوي",o:["تقديم العون المادي والمعنوي","تركهم بلا مساعدة","منع التواصل معهم","مطالبتهم بترك بلادهم"],ca:"تَقْدِيمُ الْعَوْنِ الْمَادِّيِّ وَالْمَعْنَوِيِّ.",e:"يُؤَكِّدُ الدَّرْسُ عَلَى الدَّعْمِ الْمَادِّيِّ وَالْمَعْنَوِيِّ."},
+{q:"ماذا ترسل الدول الإسلامية لتعريف الأقليات بدينهم؟",a:"العلماء والكتب",o:["العلماء والكتب","التجار فقط","السياح","الأموال فقط"],ca:"الْعُلَمَاءَ وَالْكُتُبَ.",e:"مِنَ الْمُسَاعَدَةِ إِرْسَالُ الْعُلَمَاءِ وَالْكُتُبِ."}
+],
+multi:[
+{q:"اختر ما يدخل في واجب الدول الإسلامية نحو الأقليات.",a:["الدعم المادي","الدعم المعنوي","بناء المساجد والمدارس","إرسال العلماء والكتب"],o:["الدعم المادي","الدعم المعنوي","بناء المساجد والمدارس","إرسال العلماء والكتب","قطع الصلة بهم","ترك حقوقهم"],ca:["الدَّعْمُ الْمَادِّيُّ","الدَّعْمُ الْمَعْنَوِيُّ","بِنَاءُ الْمَسَاجِدِ وَالْمَدَارِسِ","إِرْسَالُ الْعُلَمَاءِ وَالْكُتُبِ"],e:"هٰذِهِ مِنْ أَبْرَزِ صُوَرِ الْمُسَاعَدَةِ فِي الدَّرْسِ."},
+{q:"اختر المشكلات التي تواجه الأقليات الإسلامية كما في الدرس.",a:["الفقر","صعوبة المعيشة","التضييق في ممارسة الشعائر"],o:["الفقر","صعوبة المعيشة","التضييق في ممارسة الشعائر","الغنى الدائم","كثرة الفرص"],ca:["الْفَقْرُ","صُعُوبَةُ الْمَعِيشَةِ","التَّضْيِيقُ فِي مُمَارَسَةِ الشَّعَائِرِ"],e:"هٰذِهِ مِنْ أَهَمِّ الْمُشْكِلَاتِ الَّتِي ذَكَرَهَا الدَّرْسُ."}
+],
+written:[
+{q:"عرف الأقليات الإسلامية.",a:"هِيَ فِئَةٌ قَلِيلَةٌ مِنَ الْمُسْلِمِينَ تَعِيشُ بَيْنَ أَغْلَبِيَّةٍ غَيْرِ مُسْلِمَةٍ فِي بِلَادٍ غَيْرِ إِسْلَامِيَّةٍ."},
+{q:"أين تعيش أكثر الأقليات الإسلامية؟",a:"تَعِيشُ أَكْثَرُهَا فِي قَارَّةِ آسِيَا، وَمِنْهَا الصِّينُ وَالْيَابَانُ وَكُورِيَا وَالْفِلِبِّينُ."},
+{q:"ما واجب الدول الإسلامية نحو الأقليات؟",a:"يَجِبُ عَلَيْهَا أَنْ تُقَدِّمَ لَهُمُ الْعَوْنَ الْمَادِّيَّ وَالْمَعْنَوِيَّ، وَأَنْ تَقِفَ مَعَهُمْ وَتُدَافِعَ عَنْ حُقُوقِهِمْ."},
+{q:"اذكر بعض أنواع المساعدات التي تقدم للأقليات.",a:"مِنْهَا الْمَالُ لِلطَّعَامِ وَالْكِسَاءِ وَالسَّكَنِ، وَبِنَاءُ الْمَسَاجِدِ وَالْمَدَارِسِ، وَإِرْسَالُ الْعُلَمَاءِ وَالْكُتُبِ."},
+{q:"تحدث باختصار عن أحوال الأقليات الإسلامية.",a:"يَعِيشُ كَثِيرٌ مِنْهُمْ فِي فَقْرٍ وَمَعِيشَةٍ صَعْبَةٍ، وَيُوَاجِهُونَ تَحَدِّيَاتٍ وَتَضْيِيقًا فِي مُمَارَسَةِ شَعَائِرِهِمْ."}
+]},
+2:{
+mcq:[
+{q:"أين تقع القدس؟",a:"في فلسطين",o:["في فلسطين","في مصر","في العراق","في اليمن"],ca:"فِي فِلَسْطِين.",e:"تَقَعُ الْقُدْسُ فِي فِلَسْطِين."},
+{q:"كيف وصف الدرس القدس من حيث القدم؟",a:"من أقدم المدن في العالم",o:["من أقدم المدن في العالم","مدينة حديثة","أحدث مدن فلسطين","مدينة بلا آثار"],ca:"مِنْ أَقْدَمِ الْمُدُنِ فِي الْعَالَمِ.",e:"هٰذَا مِنَ الْمَعْلُومَاتِ الْأَسَاسِيَّةِ فِي الدَّرْسِ."},
+{q:"في عهد أي خليفة فتح المسلمون القدس؟",a:"عمر بن الخطاب رضي الله عنه",o:["عمر بن الخطاب رضي الله عنه","أبو بكر الصديق رضي الله عنه","عثمان بن عفان رضي الله عنه","علي بن أبي طالب رضي الله عنه"],ca:"عُمَرُ بْنُ الْخَطَّابِ رَضِيَ اللهُ عَنْهُ.",e:"فُتِحَتِ الْقُدْسُ فِي خِلَافَةِ عُمَرَ بْنِ الْخَطَّابِ."},
+{q:"ماذا كتب عمر رضي الله عنه لأهل القدس؟",a:"وثيقة الأمان",o:["وثيقة الأمان","وثيقة التجارة","وثيقة الحرب","وثيقة الهجرة"],ca:"وَثِيقَةَ الْأَمَانِ.",e:"كَتَبَ عُمَرُ رَضِيَ اللهُ عَنْهُ لِأَهْلِهَا وَثِيقَةَ الْأَمَانِ."},
+{q:"من ارتبط باسترداد القدس من الصليبيين؟",a:"صلاح الدين",o:["صلاح الدين","عمر بن الخطاب","خالد بن الوليد","طارق بن زياد"],ca:"صَلَاحُ الدِّينِ.",e:"يَرْتَبِطُ صَلَاحُ الدِّينِ فِي الدَّرْسِ بِاسْتِرْدَادِ الْقُدْسِ."},
+{q:"ما الحدث النبوي المرتبط بالمسجد الأقصى؟",a:"الإسراء والمعراج",o:["الإسراء والمعراج","الهجرة","غزوة بدر","فتح مكة"],ca:"الْإِسْرَاءُ وَالْمِعْرَاجُ.",e:"الْمَسْجِدُ الْأَقْصَى مُرْتَبِطٌ بِالْإِسْرَاءِ وَالْمِعْرَاجِ."}
+],
+multi:[
+{q:"اختر ما ورد عن عمر بن الخطاب والقدس.",a:["فتحت في خلافته","جاء إليها وتسلمها بنفسه","كتب لأهلها وثيقة الأمان"],o:["فتحت في خلافته","جاء إليها وتسلمها بنفسه","كتب لأهلها وثيقة الأمان","قاد الحملات الصليبية","استولى عليها في العصر الحاضر"],ca:["فُتِحَتْ فِي خِلَافَتِهِ","جَاءَ إِلَيْهَا وَتَسَلَّمَهَا بِنَفْسِهِ","كَتَبَ لِأَهْلِهَا وَثِيقَةَ الْأَمَانِ"],e:"هٰذِهِ أَهَمُّ الْمَعْلُومَاتِ الْمُرْتَبِطَةِ بِعُمَرَ وَالْقُدْسِ."},
+{q:"اختر ما يبين أهمية القدس للمسلمين.",a:["المسجد الأقصى","الإسراء والمعراج"],o:["المسجد الأقصى","الإسراء والمعراج","المسجد الحرام داخل القدس","غزوة أحد"],ca:["الْمَسْجِدُ الْأَقْصَى","الْإِسْرَاءُ وَالْمِعْرَاجُ"],e:"مَكَانَةُ الْقُدْسِ مُرْتَبِطَةٌ بِالْمَسْجِدِ الْأَقْصَى وَالْإِسْرَاءِ وَالْمِعْرَاجِ."}
+],
+written:[
+{q:"أين تقع القدس؟ وما أهميتها للمسلمين؟",a:"تَقَعُ الْقُدْسُ فِي فِلَسْطِين، وَفِيهَا الْمَسْجِدُ الْأَقْصَى، وَهِيَ مِنَ الْمُدُنِ الْمُهِمَّةِ لِلْمُسْلِمِينَ."},
+{q:"تحدث عن دخول المسلمين القدس في عهد عمر بن الخطاب رضي الله عنه.",a:"فَتَحَ الْمُسْلِمُونَ الْقُدْسَ فِي خِلَافَةِ عُمَرَ بْنِ الْخَطَّابِ رَضِيَ اللهُ عَنْهُ، وَجَاءَ إِلَيْهَا وَتَسَلَّمَهَا بِنَفْسِهِ، وَكَتَبَ لِأَهْلِهَا وَثِيقَةَ الْأَمَانِ."},
+{q:"كيف كان حال أهل القدس في ظل الحكم الإسلامي؟",a:"نَعِمَ أَهْلُ الْقُدْسِ بِالِاسْتِقْرَارِ وَالْعَدْلِ فِي ظِلِّ الْإِسْلَامِ."},
+{q:"ما علاقة المسجد الأقصى بالإسراء والمعراج؟",a:"أُسْرِيَ بِالنَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ إِلَى الْمَسْجِدِ الْأَقْصَى، ثُمَّ عُرِجَ بِهِ مِنْهُ."},
+{q:"ما واجب المسلمين نحو القدس؟",a:"يَجِبُ عَلَى الْمُسْلِمِينَ أَنْ يَهْتَمُّوا بِالْقُدْسِ، وَأَنْ يَعْمَلُوا عَلَى اسْتِرْدَادِهَا وَالْمُحَافَظَةِ عَلَى مَكَانَتِهَا وَمَعَالِمِهَا الْإِسْلَامِيَّةِ."}
+]},
+3:{
+mcq:[
+{q:"الناس في هذه الحياة من حيث المادة قسمان، ما هما؟",a:"أغنياء وفقراء",o:["أغنياء وفقراء","تجار وطلاب","أغنياء فقط","فقراء فقط"],ca:"أَغْنِيَاءُ وَفُقَرَاءُ.",e:"النَّاسُ فِي هَذِهِ الْحَيَاةِ مِنْ حَيْثُ الْمَادَّةِ قِسْمَانِ."},
+{q:"ما الصفات التي يجب على التاجر أن يتصف بها؟",a:"الصدق والأمانة وحسن الخلق",o:["الصدق والأمانة وحسن الخلق","الكذب وكثرة الربح","الشدة","الطمع"],ca:"الصِّدْقُ وَالْأَمَانَةُ وَحُسْنُ الْخُلُقِ.",e:"هٰذِهِ هِيَ الصِّفَاتُ الْمَذْكُورَةُ فِي الدَّرْسِ."},
+{q:"كيف كان حال أحمد قبل التجارة؟",a:"كان فقيرا",o:["كان فقيرا","كان غنيا","كان ملكا","كان معلما"],ca:"كَانَ فَقِيرًا.",e:"بَدَأَتِ الْقِصَّةُ وَأَحْمَدُ فَقِيرٌ."},
+{q:"ماذا فعل أحمد عندما فكر في التجارة؟",a:"فتح دكانا صغيرا",o:["فتح دكانا صغيرا","اشترى مصنعا","ترك المدينة","توقف عن العمل"],ca:"فَتَحَ دُكَّانًا صَغِيرًا.",e:"بَدَأَ تِجَارَتَهُ بِدُكَّانٍ صَغِيرٍ."},
+{q:"لماذا أحب الناس أحمد؟",a:"لصدقه وأمانته وحسن معاملته",o:["لصدقه وأمانته وحسن معاملته","لأنه كان يرفع الأسعار","لأنه كان يمنع البيع","لأنه كان غنيا منذ البداية"],ca:"لِصِدْقِهِ وَأَمَانَتِهِ وَحُسْنِ مُعَامَلَتِهِ.",e:"هٰذِهِ الصِّفَاتُ كَانَتْ سَبَبًا فِي مَحَبَّةِ النَّاسِ لَهُ."},
+{q:"ماذا كان أحمد يخرج إذا حال الحول على ماله؟",a:"الزكاة",o:["الزكاة","كل ماله","ثمن الدكان","الربح كله"],ca:"الزَّكَاةَ.",e:"كَانَ يُخْرِجُ زَكَاةَ مَالِهِ إِذَا حَالَ عَلَيْهِ الْحَوْلُ."}
+],
+multi:[
+{q:"اختر ما كان أحمد يفعله في معاملة المشترين.",a:["يعاملهم بالحسنى","يؤجل الدفع للمعسرين","يخفض الثمن أحيانا","يكتفي بالربح القليل"],o:["يعاملهم بالحسنى","يؤجل الدفع للمعسرين","يخفض الثمن أحيانا","يكتفي بالربح القليل","يغشهم","يطرد المحتاج"],ca:["يُعَامِلُهُمْ بِالْحُسْنَى","يُؤَجِّلُ الدَّفْعَ لِلْمُعْسِرِينَ","يُخَفِّضُ الثَّمَنَ أَحْيَانًا","يَكْتَفِي بِالرِّبْحِ الْقَلِيلِ"],e:"هٰذِهِ مِنْ صُوَرِ حُسْنِ مُعَامَلَةِ أَحْمَدَ لِلنَّاسِ."},
+{q:"اختر النتائج التي ترتبت على صدق أحمد وأمانته.",a:["أحبه الناس","أقبلوا على الشراء منه","كثرت أمواله","توسعت تجارته"],o:["أحبه الناس","أقبلوا على الشراء منه","كثرت أمواله","توسعت تجارته","أغلق دكانه","ابتعد عنه المشترون"],ca:["أَحَبَّهُ النَّاسُ","أَقْبَلُوا عَلَى الشِّرَاءِ مِنْهُ","كَثُرَتْ أَمْوَالُهُ","تَوَسَّعَتْ تِجَارَتُهُ"],e:"كَانَ الصِّدْقُ وَالْأَمَانَةُ سَبَبًا فِي نَجَاحِهِ."}
+],
+written:[
+{q:"بم يكون الإنسان غنيا؟",a:"يَكُونُ الْإِنْسَانُ غَنِيًّا بِالتَّوَكُّلِ عَلَى اللهِ وَالْكَسْبِ مِنْ عَمَلِ يَدِهِ."},
+{q:"ما الصفات التي يجب على التاجر أن يتصف بها؟",a:"يَجِبُ عَلَى التَّاجِرِ أَنْ يَتَّصِفَ بِالصِّدْقِ وَالْأَمَانَةِ وَحُسْنِ الْخُلُقِ."},
+{q:"كيف كان أحمد يعامل المعسرين؟",a:"كَانَ يُيَسِّرُ عَلَى الْمُعْسِرِينَ، فَيُؤَجِّلُ لَهُمُ الدَّفْعَ، وَقَدْ يُخَفِّضُ لَهُمُ الثَّمَنَ."},
+{q:"ماذا فعل أحمد عندما كثرت أمواله وضاق به دكانه؟",a:"انْتَقَلَ إِلَى مَكَانٍ وَاسِعٍ، وَمَلَأَ دُكَّانَهُ بِأَنْوَاعٍ كَثِيرَةٍ مِنَ الْبَضَائِعِ."},
+{q:"ما سبب نجاح أحمد في تجارته؟",a:"كَانَ نَجَاحُهُ بِفَضْلِ اللهِ ثُمَّ بِالصِّدْقِ وَالْأَمَانَةِ وَحُسْنِ الْمُعَامَلَةِ."}
+]},
+4:{
+mcq:[
+{q:"كيف كان مصعب بن عمير رضي الله عنه قبل الإسلام؟",a:"شابا جميلا منعما كثير المال",o:["شابا جميلا منعما كثير المال","فقيرا منذ صغره","تاجرا كبيرا","مزارعا"],ca:"كَانَ شَابًّا جَمِيلًا مُنَعَّمًا وَكَثِيرَ الْمَالِ.",e:"كَانَ مُصْعَبٌ يَعِيشُ فِي نَعِيمٍ قَبْلَ إِسْلَامِهِ."},
+{q:"كيف عرف مصعب بالنبي صلى الله عليه وسلم؟",a:"سمع حديث قريش عنه",o:["سمع حديث قريش عنه","قرأ عنه في كتاب","رآه في المدينة أولا","أخبره ملك"],ca:"سَمِعَ حَدِيثَ قُرَيْشٍ عَنِ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ.",e:"كَانَ هٰذَا بَدَايَةَ تَعَرُّفِهِ عَلَى النَّبِيِّ."},
+{q:"ماذا حدث لمصعب عندما علم أهله بإسلامه؟",a:"تنكر له أهله وحرمته أمه مالها",o:["تنكر له أهله وحرمته أمه مالها","زادوه مالا","جعلوه سيد قريش","أرسلوه للتجارة"],ca:"تَنَكَّرَ لَهُ أَهْلُهُ وَحَرَمَتْهُ أُمُّهُ مَالَهَا.",e:"فَقَدَ مُصْعَبٌ نَعِيمَهُ بَعْدَ إِسْلَامِهِ."},
+{q:"إلى أين أرسل النبي صلى الله عليه وسلم مصعبا للدعوة؟",a:"إلى المدينة",o:["إلى المدينة","إلى الطائف","إلى الشام","إلى اليمن"],ca:"إِلَى الْمَدِينَةِ.",e:"أَرْسَلَهُ النَّبِيُّ إِلَى الْمَدِينَةِ لِلتَّعْلِيمِ وَالدَّعْوَةِ."},
+{q:"في أي غزوتين حمل مصعب اللواء؟",a:"بدر وأحد",o:["بدر وأحد","بدر والخندق","أحد وحنين","الخندق وتبوك"],ca:"بَدْرٌ وَأُحُدٌ.",e:"حَمَلَ اللِّوَاءَ فِي بَدْرٍ وَأُحُدٍ."},
+{q:"في أي غزوة استشهد مصعب رضي الله عنه؟",a:"أحد",o:["أحد","بدر","الخندق","حنين"],ca:"غَزْوَةُ أُحُدٍ.",e:"اسْتُشْهِدَ رَضِيَ اللهُ عَنْهُ فِي أُحُدٍ."}
+],
+multi:[
+{q:"اختر ما حدث لمصعب بعد أن علم أهله بإسلامه.",a:["تنكر له أهله","حرمته أمه مالها","أصبح فقيرا","ثبت على الإسلام"],o:["تنكر له أهله","حرمته أمه مالها","أصبح فقيرا","ثبت على الإسلام","ترك الإسلام","ازداد ماله"],ca:["تَنَكَّرَ لَهُ أَهْلُهُ","حَرَمَتْهُ أُمُّهُ مَالَهَا","أَصْبَحَ فَقِيرًا","ثَبَتَ عَلَى الْإِسْلَامِ"],e:"خَسِرَ النَّعِيمَ وَلَكِنَّهُ ثَبَتَ عَلَى دِينِهِ."},
+{q:"اختر مهام مصعب في المدينة.",a:["تعليم القرآن","تعليم الدين","دعوة الناس إلى الإسلام"],o:["تعليم القرآن","تعليم الدين","دعوة الناس إلى الإسلام","جمع الضرائب","العمل بالتجارة"],ca:["تَعْلِيمُ الْقُرْآنِ","تَعْلِيمُ الدِّينِ","دَعْوَةُ النَّاسِ إِلَى الْإِسْلَامِ"],e:"كَانَتْ مُهِمَّتُهُ التَّعْلِيمَ وَالدَّعْوَةَ."}
+],
+written:[
+{q:"كيف كان مصعب بن عمير رضي الله عنه قبل الإسلام؟",a:"كَانَ شَابًّا جَمِيلًا مُنَعَّمًا، حَسَنَ الْهَيْئَةِ وَالْمَلَابِسِ، وَكَثِيرَ الْمَالِ."},
+{q:"كيف دخل مصعب رضي الله عنه في الإسلام؟",a:"سَمِعَ عَنِ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، فَذَهَبَ إِلَيْهِ وَاسْتَمَعَ إِلَى حَدِيثِهِ، ثُمَّ أَعْلَنَ إِسْلَامَهُ."},
+{q:"ماذا حدث لمصعب بعد أن علم أهله بإسلامه؟",a:"تَنَكَّرَ لَهُ أَهْلُهُ، وَحَرَمَتْهُ أُمُّهُ مَالَهَا، فَأَصْبَحَ فَقِيرًا، وَلَكِنَّهُ ثَبَتَ عَلَى الْإِسْلَامِ."},
+{q:"لماذا أرسل النبي صلى الله عليه وسلم مصعبا إلى المدينة؟",a:"أَرْسَلَهُ لِيُعَلِّمَ الْمُسْلِمِينَ الْقُرْآنَ وَالدِّينَ، وَيَدْعُوَ النَّاسَ إِلَى الْإِسْلَامِ."},
+{q:"كيف كانت نهاية مصعب رضي الله عنه؟",a:"ثَبَتَ فِي غَزْوَةِ أُحُدٍ وَدَافَعَ عَنِ اللِّوَاءِ حَتَّى اسْتُشْهِدَ رَضِيَ اللهُ عَنْهُ."}
+]}
+};
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function pickN(a,n){return shuffle(a).slice(0,n)}
+function show(id){["home","quiz","result"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden")}
+let state={items:[],i:0,objScore:0,writtenScore:0,selected:null,selectedMany:[],checked:false,breakdown:{}};
+
+function startExam(){
+  let objective=[],written=[];
+  state.breakdown={1:{o:0,w:0},2:{o:0,w:0},3:{o:0,w:0},4:{o:0,w:0}};
+  for(let l=1;l<=4;l++){
+    objective.push(...pickN(pools[l].mcq,3).map(x=>({type:"mcq",lesson:l,...x})));
+    objective.push(...pickN(pools[l].multi,1).map(x=>({type:"multi",lesson:l,...x})));
+    written.push(...pickN(pools[l].written,4).map(x=>({type:"written",lesson:l,...x})));
+  }
+  state.items=[...shuffle(objective),...shuffle(written)];
+  state.i=0;state.objScore=0;state.writtenScore=0;state.selected=null;state.selectedMany=[];state.checked=false;
+  show("quiz");render();
+}
+function header(){
+  const total=state.items.length,p=Math.round((state.i/total)*100),part=state.i<16?"القسم الأول: أسئلة الاختيار":"القسم الثاني: الإجابات الكتابية";
+  return `<div class="toprow"><span class="pill">${part}</span><span class="small">${state.i+1} / ${total}</span></div><div class="progress"><div class="bar" style="width:${p}%"></div></div>`;
+}
+function render(){
+  if(state.i>=state.items.length)return finish();
+  const x=state.items[state.i];
+  if(x.type==="mcq")renderMCQ(x);
+  else if(x.type==="multi")renderMulti(x);
+  else renderWritten(x);
+}
+function renderMCQ(x){
+  const opts=shuffle(x.o);
+  document.getElementById("quiz").innerHTML=header()+`<div class="small">اختر إجابة واحدة.</div><div class="q">${x.q}</div><div id="opts">${opts.map(o=>`<button class="option" data-v="${encodeURIComponent(o)}">${o}</button>`).join("")}</div><button id="check" class="btn" disabled>تحقق من الإجابة</button><div id="fb"></div>`;
+  document.querySelectorAll(".option").forEach(el=>el.onclick=()=>pickOne(el,decodeURIComponent(el.dataset.v)));
+  document.getElementById("check").onclick=()=>checkOne(x);
+}
+function pickOne(el,val){
+  if(state.checked)return;state.selected=val;
+  document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");
+  document.getElementById("check").disabled=false;
+}
+function checkOne(x){
+  if(!state.selected||state.checked)return;state.checked=true;
+  const ok=state.selected===x.a;if(ok){state.objScore++;state.breakdown[x.lesson].o++}
+  document.querySelectorAll(".option").forEach(el=>{const v=decodeURIComponent(el.dataset.v);if(v===x.a)el.classList.add("correct");else if(v===state.selected&&!ok)el.classList.add("wrong");el.disabled=true});
+  document.getElementById("fb").innerHTML=`<div class="feedback ${ok?"good":"bad"}">${ok?"✅ إِجَابَةٌ صَحِيحَةٌ":"❌ إِجَابَةٌ خَاطِئَةٌ"}<div class="explain">${ok?"":("الإِجَابَةُ الصَّحِيحَةُ: "+x.ca+"<br>")}${x.e}</div></div><button id="next" class="btn secondary" style="margin-top:12px">السؤال التالي</button>`;
+  document.getElementById("next").onclick=next;document.getElementById("check").classList.add("hidden");
+}
+function renderMulti(x){
+  const opts=shuffle(x.o);state.selectedMany=[];
+  document.getElementById("quiz").innerHTML=header()+`<div class="small">اختر جميع الإجابات الصحيحة.</div><div class="q">${x.q}</div><div id="opts">${opts.map(o=>`<button class="option" data-v="${encodeURIComponent(o)}">${o}</button>`).join("")}</div><button id="check" class="btn" disabled>تحقق من الإجابات</button><div id="fb"></div>`;
+  document.querySelectorAll(".option").forEach(el=>el.onclick=()=>pickMany(el,decodeURIComponent(el.dataset.v)));
+  document.getElementById("check").onclick=()=>checkMany(x);
+}
+function pickMany(el,val){
+  if(state.checked)return;const i=state.selectedMany.indexOf(val);
+  if(i>=0){state.selectedMany.splice(i,1);el.classList.remove("selected")}else{state.selectedMany.push(val);el.classList.add("selected")}
+  document.getElementById("check").disabled=state.selectedMany.length===0;
+}
+function sameSet(a,b){return a.length===b.length&&a.every(x=>b.includes(x))}
+function checkMany(x){
+  if(!state.selectedMany.length||state.checked)return;state.checked=true;
+  const ok=sameSet(state.selectedMany,x.a);if(ok){state.objScore++;state.breakdown[x.lesson].o++}
+  document.querySelectorAll(".option").forEach(el=>{const v=decodeURIComponent(el.dataset.v);if(x.a.includes(v))el.classList.add("correct");else if(state.selectedMany.includes(v))el.classList.add("wrong");el.disabled=true});
+  document.getElementById("fb").innerHTML=`<div class="feedback ${ok?"good":"bad"}">${ok?"✅ جَمِيعُ اخْتِيَارَاتِكَ صَحِيحَةٌ":"❌ لَمْ تَخْتَرْ جَمِيعَ الإِجَابَاتِ الصَّحِيحَةَ"}<div class="explain">${ok?"":("الإِجَابَاتُ الصَّحِيحَةُ:<br>• "+x.ca.join("<br>• ")+"<br>")}${x.e}</div></div><button id="next" class="btn secondary" style="margin-top:12px">السؤال التالي</button>`;
+  document.getElementById("next").onclick=next;document.getElementById("check").classList.add("hidden");
+}
+function renderWritten(x){
+  document.getElementById("quiz").innerHTML=header()+`<div class="q">${x.q}</div><textarea id="ans" placeholder="اكتب إجابتك هنا أولا..."></textarea><button id="reveal" class="btn" style="margin-top:12px">أظهر الإجابة النموذجية</button><div id="model"></div>`;
+  document.getElementById("reveal").onclick=()=>revealWritten(x);
+}
+function revealWritten(x){
+  const txt=document.getElementById("ans").value.trim();if(!txt){alert("اكتب إجابتك أولا.");return}
+  document.getElementById("model").innerHTML=`<div class="model"><b>الإِجَابَةُ النَّمُوذَجِيَّةُ:</b><br>${x.a}</div><div class="menu" style="margin-top:12px"><button id="good" class="btn">أجبت جيدا</button><button id="review" class="btn secondary">أحتاج إلى مراجعة</button></div>`;
+  document.getElementById("good").onclick=()=>gradeWritten(x,true);
+  document.getElementById("review").onclick=()=>gradeWritten(x,false);
+}
+function gradeWritten(x,ok){if(ok){state.writtenScore++;state.breakdown[x.lesson].w++}next()}
+function next(){state.i++;state.selected=null;state.selectedMany=[];state.checked=false;render()}
+function finish(){
+  show("result");
+  const total=state.objScore+state.writtenScore;
+  let rows="";
+  for(let l=1;l<=4;l++) rows+=`<div class="lessonrow"><b>الدرس ${["الأول","الثاني","الثالث","الرابع"][l-1]}</b><span>الاختيار: ${state.breakdown[l].o}/4</span><span>الكتابي: ${state.breakdown[l].w}/4</span></div>`;
+  document.getElementById("result").innerHTML=`
+  <h2>نتيجة الاختبار الشامل</h2>
+  <div class="stats">
+    <div class="stat"><b>أسئلة الاختيار</b><div class="score">${state.objScore}/16</div></div>
+    <div class="stat"><b>الإجابات الكتابية</b><div class="score">${state.writtenScore}/16</div></div>
+  </div>
+  <div class="stat"><b>المجموع</b><div class="score">${total}/32</div></div>
+  <h3>النتيجة حسب الدرس</h3>${rows}
+  <div class="menu" style="margin-top:16px"><button class="btn" onclick="startExam()">أعد الاختبار بأسئلة جديدة</button><a class="btn ghost" href="index.html#taabir">الرجوع إلى دروس التعبير</a></div>`;
+}
+</script>
+</body>
+</html>
