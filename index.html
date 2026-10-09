@@ -60,8 +60,9 @@ button,a{font:inherit}
           <span class="arrow">←</span><div class="icon">✍️</div>
           <h3>التعبير</h3><p>تدريبات الدروس والاختبارات التجريبية</p><span class="badge">أربعة دروس متاحة</span>
         </button>
-        <button class="subject disabled" onclick="openSubject('arabic')">
-          <div class="icon">📘</div><h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">قريبا</span>
+        <button class="subject active" onclick="openSubject('arabic')">
+          <span class="arrow">←</span><div class="icon">📘</div>
+          <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">درس واحد متاح</span>
         </button>
         <button class="subject disabled" onclick="openSubject('tafsir')">
           <div class="icon">📖</div><h3>التفسير</h3><p>الأسئلة المهمة ومراجعة الدروس</p><span class="badge">قريبا</span>
@@ -133,6 +134,45 @@ button,a{font:inherit}
     </section>
   </main>
 
+  <main id="arabic" class="screen">
+    <section class="section">
+      <a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a>
+      <div class="section-title">
+        <h2>دروس اللغة العربية / التدريبات</h2>
+        <span>اختر الدرس</span>
+      </div>
+
+      <div class="panel">
+        <div class="course-grid">
+          <a class="course available" href="tadribat_lesson1.html">
+            <span class="status">متاح</span>
+            <h3>الدرس الأول</h3>
+            <p>الفعل المتعدي واللازم، وطرق التعدية، وقواعد الدرس الأول – ٥٥ سؤالا</p>
+          </a>
+          <div class="course locked">
+            <span class="status soon">قريبا</span>
+            <h3>الدرس الثاني</h3>
+            <p>سيتم تفعيله عند إضافة أسئلة الدرس.</p>
+          </div>
+          <div class="course locked">
+            <span class="status soon">قريبا</span>
+            <h3>الدرس الثالث</h3>
+            <p>سيتم تفعيله عند إضافة أسئلة الدرس.</p>
+          </div>
+        </div>
+
+        <div class="group-box">
+          <div class="group-title">مراجعة الدرس الأول</div>
+          <div class="group-grid">
+            <a class="group" href="tadribat_lesson1.html" style="text-decoration:none;color:inherit"><b>اختيار واحد</b><span>٤٢ سؤالا على قواعد الدرس وتمارينه.</span></a>
+            <a class="group" href="tadribat_lesson1.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>١٣ سؤالا بإجابتين صحيحتين أو أكثر.</span></a>
+          </div>
+        </div>
+        <div class="note">الأسئلة مبنية على قواعد وتمارين الدرس الأول من كتاب التدريبات.</div>
+      </div>
+    </section>
+  </main>
+
   <main id="emptySubject" class="screen">
     <section class="section">
       <a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a>
@@ -151,6 +191,7 @@ function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.r
 function openSubject(id){
   hideAll();
   if(id==="taabir"){document.getElementById("taabir").classList.add("show");location.hash="taabir"}
+  else if(id==="arabic"){document.getElementById("arabic").classList.add("show");location.hash="arabic"}
   else{document.getElementById("emptyTitle").textContent=labels[id]||"";document.getElementById("emptySubject").classList.add("show");location.hash=id}
   window.scrollTo({top:0,behavior:"smooth"});
 }
@@ -158,6 +199,7 @@ function goHome(e){if(e)e.preventDefault();hideAll();document.getElementById("su
 function init(){
   const h=location.hash.replace("#","");
   if(h==="taabir")openSubject("taabir");
+  else if(h==="arabic")openSubject("arabic");
   else if(labels[h])openSubject(h);
 }
 init();
