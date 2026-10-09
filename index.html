@@ -62,7 +62,7 @@ button,a{font:inherit}
         </button>
         <button class="subject active" onclick="openSubject('arabic')">
           <span class="arrow">←</span><div class="icon">📘</div>
-          <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">درس واحد متاح</span>
+          <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">درسان متاحان</span>
         </button>
         <button class="subject disabled" onclick="openSubject('tafsir')">
           <div class="icon">📖</div><h3>التفسير</h3><p>الأسئلة المهمة ومراجعة الدروس</p><span class="badge">قريبا</span>
@@ -149,11 +149,11 @@ button,a{font:inherit}
             <h3>الدرس الأول</h3>
             <p>الفعل المتعدي واللازم، وطرق التعدية، وتمارين الدرس الأول – ٧٣ سؤالا</p>
           </a>
-          <div class="course locked">
-            <span class="status soon">قريبا</span>
+          <a class="course available" href="tadribat_lesson2.html">
+            <span class="status">متاح</span>
             <h3>الدرس الثاني</h3>
-            <p>سيتم تفعيله عند إضافة أسئلة الدرس.</p>
-          </div>
+            <p>باب فاعل، قد، لكن، ذوو وأولو، كاف الخطاب، اللام المزحلقة – ١١١ سؤالا</p>
+          </a>
           <div class="course locked">
             <span class="status soon">قريبا</span>
             <h3>الدرس الثالث</h3>
@@ -168,7 +168,14 @@ button,a{font:inherit}
             <a class="group" href="tadribat_lesson1.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>٨ أسئلة بإجابتين صحيحتين أو أكثر.</span></a>
           </div>
         </div>
-        <div class="note">الأسئلة مبنية على قواعد وتمارين الدرس الأول من كتاب التدريبات.</div>
+        <div class="group-box">
+          <div class="group-title">مراجعة الدرس الثاني</div>
+          <div class="group-grid">
+            <a class="group" href="tadribat_lesson2.html" style="text-decoration:none;color:inherit"><b>اختيار واحد</b><span>٩٩ سؤالا تطبيقيا من تمارين الدرس وقواعده.</span></a>
+            <a class="group" href="tadribat_lesson2.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>١٢ سؤالا بإجابتين صحيحتين أو أكثر.</span></a>
+          </div>
+        </div>
+        <div class="note">الأولوية لتمارين الكتاب، مع أسئلة تطبيقية على نمط الاختبار الحقيقي.</div>
       </div>
     </section>
   </main>
