@@ -60,6 +60,10 @@ button,a{font:inherit}
           <span class="arrow">←</span><div class="icon">✍️</div>
           <h3>التعبير</h3><p>تدريبات الدروس والاختبارات التجريبية</p><span class="badge">أربعة دروس متاحة</span>
         </button>
+        <button class="subject active" onclick="openSubject('tadribat')">
+          <span class="arrow">←</span><div class="icon">🧩</div>
+          <h3>التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">جاهز للإضافة</span>
+        </button>
         <button class="subject disabled" onclick="openSubject('arabic')">
           <div class="icon">📘</div><h3>دروس اللغة العربية</h3><p>النحو والصرف والتدريبات</p><span class="badge">قريبا</span>
         </button>
@@ -146,7 +150,7 @@ button,a{font:inherit}
   <div class="footer">منصة مراجعة مواد المستوى الرابع</div>
 </div>
 <script>
-const labels={arabic:"دروس اللغة العربية",tafsir:"التفسير",qiraa:"القراءة",tawhid:"التوحيد",sahaba:"صور من حياة الصحابة",nusus:"النصوص الأدبية",tarikh:"تاريخ الخلفاء الراشدين"};
+const labels={tadribat:"التدريبات",arabic:"دروس اللغة العربية",tafsir:"التفسير",qiraa:"القراءة",tawhid:"التوحيد",sahaba:"صور من حياة الصحابة",nusus:"النصوص الأدبية",tarikh:"تاريخ الخلفاء الراشدين"};
 function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("show"))}
 function openSubject(id){
   hideAll();
