@@ -76,8 +76,8 @@ button,a{font:inherit}
         <button class="subject disabled" onclick="openSubject('sahaba')">
           <div class="icon">👥</div><h3>صور من حياة الصحابة</h3><p>الأحداث والشخصيات والأسئلة</p><span class="badge">قريبا</span>
         </button>
-        <button class="subject disabled" onclick="openSubject('nusus')">
-          <div class="icon">📝</div><h3>النصوص الأدبية</h3><p>النصوص والمعاني والقواعد</p><span class="badge">قريبا</span>
+        <button class="subject active" onclick="openSubject('nusus')">
+          <div class="icon">📝</div><h3>النصوص الأدبية</h3><p>النصوص والمعاني والقواعد · Arabe–français</p><span class="badge">خمسة دروس ومراجعة مجمعة</span>
         </button>
         <button class="subject disabled" onclick="openSubject('tarikh')">
           <div class="icon">🏛️</div><h3>تاريخ الخلفاء الراشدين</h3><p>الأحداث والتواريخ والأسئلة</p><span class="badge">قريبا</span>
@@ -187,6 +187,7 @@ button,a{font:inherit}
     </section>
   </main>
 
+<main id="nusus" class="screen"><section class="section"><a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a><div class="section-title"><h2>النصوص الأدبية</h2><span>Arabe–français</span></div><div class="panel"><div class="course-grid"><a class="course available" href="nusus_quiz.html?course=1"><span class="status">متاح</span><h3>الدَّرْسُ الأول</h3><p>Cours 1 · 6 QCM avec correction</p></a><a class="course available" href="nusus_quiz.html?course=2"><span class="status">متاح</span><h3>الدَّرْسُ الثاني</h3><p>Cours 2 · 6 QCM avec correction</p></a><a class="course available" href="nusus_quiz.html?course=3"><span class="status">متاح</span><h3>الدَّرْسُ الثالث</h3><p>Cours 3 · 6 QCM avec correction</p></a><a class="course available" href="nusus_quiz.html?course=4"><span class="status">متاح</span><h3>الدَّرْسُ الرابع</h3><p>Cours 4 · 6 QCM avec correction</p></a><a class="course available" href="nusus_quiz.html?course=5"><span class="status">متاح</span><h3>الدَّرْسُ الخامس</h3><p>Cours 5 · 6 QCM avec correction</p></a></div><div class="group-box"><div class="group-title">مُرَاجَعَةٌ مُجَمَّعَةٌ · Révision mélangée</div><a class="course available" href="nusus_quiz.html?course=mix"><h3>أَهَمُّ أَسْئِلَةِ الدُّرُوسِ ١–٥</h3><p>20 questions essentielles, tirées des cinq cours</p></a></div></div></section></main>
   <main id="emptySubject" class="screen">
     <section class="section">
       <a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a>
@@ -205,6 +206,7 @@ function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.r
 function openSubject(id){
   hideAll();
   if(id==="taabir"){document.getElementById("taabir").classList.add("show");location.hash="taabir"}
+  else if(id==="nusus"){document.getElementById("nusus").classList.add("show");location.hash="nusus"}
   else if(id==="arabic"){document.getElementById("arabic").classList.add("show");location.hash="arabic"}
   else{document.getElementById("emptyTitle").textContent=labels[id]||"";document.getElementById("emptySubject").classList.add("show");location.hash=id}
   window.scrollTo({top:0,behavior:"smooth"});
