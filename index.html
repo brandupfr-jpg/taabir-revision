@@ -64,8 +64,8 @@ button,a{font:inherit}
           <span class="arrow">←</span><div class="icon">📘</div>
           <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">ثمانية دروس متاحة</span>
         </button>
-        <button class="subject disabled" onclick="openSubject('tafsir')">
-          <div class="icon">📖</div><h3>التفسير</h3><p>الأسئلة المهمة ومراجعة الدروس</p><span class="badge">قريبا</span>
+        <button class="subject active" onclick="openSubject('tafsir')">
+          <div class="icon">📖</div><h3>التَّفْسِيرُ</h3><p>مُرَاجَعَةُ الِاخْتِبَارِ الْكِتَابِيِّ</p><span class="badge">٥٩ سُؤَالًا فِي مَجْمُوعَتَيْنِ</span>
         </button>
         <button class="subject disabled" onclick="openSubject('qiraa')">
           <div class="icon">📚</div><h3>القراءة</h3><p>الفهم والأسئلة والتدريب</p><span class="badge">قريبا</span>
@@ -277,6 +277,7 @@ button,a{font:inherit}
   </main>
 
   <main id="nusus" class="screen"><section class="section"><a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a><div class="section-title"><h2>النصوص الأدبية</h2><span>اختر الدرس</span></div><div class="panel"><div class="course-grid"><a class="course available" href="nusus_quiz.html?course=1"><span class="status">متاح</span><h3>الدَّرْسُ الأول</h3><p>٢٠ سؤالًا من الواجبات المحددة وملف الامتحان</p></a><a class="course available" href="nusus_quiz.html?course=2"><span class="status">متاح</span><h3>الدَّرْسُ الثاني</h3><p>٢٠ سؤالًا من الواجبات المحددة وملف الامتحان</p></a><a class="course available" href="nusus_quiz.html?course=3"><span class="status">متاح</span><h3>الدَّرْسُ الثالث</h3><p>٢٠ سؤالًا من الواجبات المحددة وملف الامتحان</p></a><a class="course available" href="nusus_quiz.html?course=4"><span class="status">متاح</span><h3>الدَّرْسُ الرابع</h3><p>٢٠ سؤالًا من الواجبات المحددة وملف الامتحان</p></a><a class="course available" href="nusus_quiz.html?course=5"><span class="status">متاح</span><h3>الدَّرْسُ الخامس</h3><p>٢٠ سؤالًا من الواجبات المحددة وملف الامتحان</p></a></div><div class="group-box"><div class="group-title">مُرَاجَعَةٌ مُجَمَّعَةٌ</div><a class="course available" href="nusus_quiz.html?course=mix"><h3>أَهَمُّ أَسْئِلَةِ الدُّرُوسِ ١–٥</h3><p>٣٠ سؤالًا من الواجبات المحددة، تشمل دائمًا نقاط ملف الامتحان</p></a></div></div></section></main>
+  <main id="tafsir" class="screen"><section class="section"><a class="back" href="#" onclick="goHome(event)">الرُّجُوعُ إِلَى الْمَوَادِّ</a><div class="section-title"><h2>التَّفْسِيرُ</h2></div><div class="panel"><p>مِنْ مُقَدِّمَةِ الْمُقَرَّرِ إِلَى الدَّرْسِ الثَّالِثِ</p><div class="course-grid"><a class="course available" href="tafsir.html?deck=written"><h3>الْأَسْئِلَةُ الْكِتَابِيَّةُ — ٣٤ سُؤَالًا</h3><p>تَذَكَّرِ الْإِجَابَةَ فِي ذِهْنِكَ، ثُمَّ أَظْهِرْهَا.</p></a><a class="course available" href="tafsir.html?deck=tf"><h3>صَحٌّ أَمْ خَطَأٌ؟ — ٢٥ سُؤَالًا</h3><p>اخْتَرْ إِجَابَتَكَ، ثُمَّ رَاجِعِ التَّصْحِيحَ.</p></a></div></div></section></main>
   <main id="emptySubject" class="screen">
     <section class="section">
       <a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a>
@@ -295,6 +296,7 @@ function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.r
 function openSubject(id){
   hideAll();
   if(id==="taabir"){document.getElementById("taabir").classList.add("show");location.hash="taabir"}
+  else if(id==="tafsir"){document.getElementById("tafsir").classList.add("show");location.hash="tafsir"}
   else if(id==="nusus"){document.getElementById("nusus").classList.add("show");location.hash="nusus"}
   else if(id==="arabic"){document.getElementById("arabic").classList.add("show");location.hash="arabic"}
   else if(id==="tawhid"){document.getElementById("tawhid").classList.add("show");location.hash="tawhid"}
