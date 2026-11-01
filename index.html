@@ -79,8 +79,8 @@ button,a{font:inherit}
         <button class="subject active" onclick="openSubject('nusus')">
           <div class="icon">📝</div><h3>النصوص الأدبية</h3><p>النصوص والمعاني والقواعد</p><span class="badge">خمسة دروس ومراجعة مجمعة</span>
         </button>
-        <button class="subject disabled" onclick="openSubject('tarikh')">
-          <div class="icon">🏛️</div><h3>تاريخ الخلفاء الراشدين</h3><p>الأحداث والتواريخ والأسئلة</p><span class="badge">قريبا</span>
+        <button class="subject active" onclick="openSubject('tarikh')">
+          <div class="icon">🏛️</div><h3>تاريخ الخلفاء الراشدين · السيرة</h3><p>أبو بكر وعمر · تدريب واختبار تجريبي</p><span class="badge">٢٠٠ سؤال مع التصحيح</span>
         </button>
       </div>
     </section>
@@ -295,6 +295,7 @@ button,a{font:inherit}
 const labels={arabic:"دروس اللغة العربية / التدريبات",tafsir:"التفسير",qiraa:"القراءة",tawhid:"التوحيد",sahaba:"صور من حياة الصحابة",nusus:"النصوص الأدبية",tarikh:"تاريخ الخلفاء الراشدين"};
 function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("show"))}
 function openSubject(id){
+  if(id==="tarikh"){location.href="sira.html";return;}
   hideAll();
   if(id==="taabir"){document.getElementById("taabir").classList.add("show");location.hash="taabir"}
   else if(id==="qiraa"){document.getElementById("qiraa").classList.add("show");location.hash="qiraa"}
