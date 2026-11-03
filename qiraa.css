@@ -3,3 +3,5 @@
 #progress,#score{direction:ltr;unicode-bidi:isolate}
 
 .study{max-width:850px;margin-inline:auto}
+
+select{font:inherit;max-width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);margin-bottom:12px}select:focus-visible{outline:3px solid #b97d21}#filter{min-height:48px}
