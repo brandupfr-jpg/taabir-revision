@@ -19,7 +19,6 @@
 <script>
 const $ = id => document.getElementById(id);
 const labels = ['أ','ب','ج','د'];
-const names = {"2": "دُعَاءُ إِبْرَاهِيمَ", "3": "الْإِنْفَاقُ فِي سَبِيلِ اللَّهِ", "4": "مِنْ آيَاتِ اللَّهِ تَعَالَى", "5": "فِي كُلِّ كَبِدٍ رَطْبَةٍ أَجْرٌ", "6": "أَعْطِ كُلَّ ذِي حَقٍّ حَقَّهُ", "7": "أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللَّهِ؟", "8": "مَنْ يُظِلُّهُمُ اللَّهُ فِي ظِلِّهِ يَوْمَ الْقِيَامَةِ", "9": "خُطْبَةُ أَبِي بَكْرٍ رَضِيَ اللَّهُ عَنْهُ", "10": "خُطْبَةُ طَارِقِ بْنِ زِيَادٍ", "11": "الرِّضَا بِقَضَاءِ اللَّهِ وَقَدَرِهِ", "12": "رِثَاءُ الْأَنْدَلُسِ", "13": "الْأَمْثَالُ وَالْحِكَمُ"};
 const countFormat = new Intl.NumberFormat('ar');
 const n = number => countFormat.format(number);
 const sections = examRaw.trim().split(/^@/m).filter(Boolean).map(block => {
@@ -32,8 +31,7 @@ const sections = examRaw.trim().split(/^@/m).filter(Boolean).map(block => {
     return {question, answer, options:[answer,a,b,c], explanation};
   })};
 });
-const requested = new URLSearchParams(location.search).get('course');
-const course = Object.hasOwn(names, requested) ? requested : null;
+const shortlist = ["مَاذَا تُفِيدُ «مِنْ» فِي «وَمَا يَخْفَى عَلَى اللَّهِ مِنْ شَيْءٍ»؟", "مَا جَزَاءُ مَنْ يُنْفِقُونَ فِي سَبِيلِ اللَّهِ وَلَا يُتْبِعُونَ صَدَقَتَهُمْ مَنًّا وَلَا أَذًى؟", "مَا الْجَانِبُ الْبَلَاغِيُّ عِنْدَ إِطْلَاقِ «الْحَيِّ» عَلَى الْمُؤْمِنِ وَ«الْمَيِّتِ» عَلَى الْكَافِرِ؟", "عَمَّ تُكَنِّي «رَطْبَةٍ» فِي «كَبِدٍ رَطْبَةٍ»؟", "مَا نَوْعُ «مَا» فِي «مَا أَنَا بِآكِلٍ»؟", "مَا نَوْعُ الِاسْتِفْهَامِ فِي «أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللَّهِ»؟", "مَا الْأُسْلُوبُ فِي «لَا ظِلَّ إِلَّا ظِلُّهُ»؟", "مَا نَوْعُ التَّشْبِيهِ فِي «الصِّدْقُ أَمَانَةٌ»؟", "مَا الْبَلَاغَةُ فِي «بِالْأَمْسِ كَانُوا مُلُوكًا ... وَالْيَوْمَ هُمْ ... عُبْدَانُ»؟", "أَيُّ مَثَلٍ يَدْعُو إِلَى الِاسْتِعَانَةِ بِصَاحِبِ الْخِبْرَةِ؟"];
 const escapeHtml = value => value.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 function shuffle(values) {
   const copy = values.slice();
@@ -44,8 +42,8 @@ function shuffle(values) {
   return copy;
 }
 function choose() {
-  const sets = course ? sections.filter(s=>s.course===course) : shuffle(Object.keys(names).map(c=>sections.filter(s=>s.course===c))).flat();
-  return sets.flatMap(s => (course?s.items:shuffle(s.items).slice(0,1)).map(q=>({...q, source:s.source, passage:s.passage})));
+  const all = sections.flatMap(s=>s.items.map(q=>({...q, source:s.source, passage:s.passage})));
+  return shortlist.map(question=>all.find(q=>q.question===question));
 }
 let queue = [], index = 0, score = 0, selected = null, checked = false;
 function show(panel) {
@@ -94,7 +92,7 @@ function finish() {
   $('restart').onclick=start;
   window.scrollTo(0,0);
 }
-$('title').textContent=course?names[course]:'مُرَاجَعَةٌ مُجَمَّعَةٌ لِلنُّصُوصِ الْأَدَبِيَّةِ';
-$('subtitle').textContent=n(choose().length)+' سُؤَالًا عَلَى مَقَاطِعَ مِنَ الدُّرُوسِ وَتَمَارِينِهَا';
+$('title').textContent='أَهَمُّ أَسْئِلَةِ النُّصُوصِ الْأَدَبِيَّةِ';
+$('subtitle').textContent='١٠ أَسْئِلَةٍ مُخْتَارَةٍ مِنَ الدُّرُوسِ ٢–١٣';
 $('start').onclick=start;
 </script></body></html>
