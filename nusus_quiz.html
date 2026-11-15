@@ -3,7 +3,7 @@
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}.wrap{max-width:760px;margin:auto;padding:18px 14px 40px}.hero{background:linear-gradient(135deg,#234c39,#3c7659);color:#fff;padding:24px 20px;border-radius:24px;box-shadow:0 10px 30px rgba(31,42,36,.12)}.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;opacity:.9}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 8px 22px rgba(31,42,36,.06)}.menu{display:grid;gap:12px}.btn{border:0;border-radius:16px;padding:15px 16px;font-size:17px;font-weight:700;cursor:pointer;background:var(--accent);color:#fff;width:100%}.btn.secondary{background:var(--accent2);color:var(--accent)}.btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--line)}.btn:disabled{opacity:.5}.option{display:block;width:100%;text-align:right;background:#fff;border:2px solid var(--line);padding:14px;border-radius:14px;margin:10px 0;font-size:17px;cursor:pointer;line-height:1.8}.option.selected{border-color:var(--accent);background:#f0f6f2}.option.correct{border-color:var(--good);background:#eef8f2}.option.wrong{border-color:var(--bad);background:#fff0f0}.toprow{display:flex;justify-content:space-between;gap:12px;align-items:center}.small{font-size:14px;color:var(--muted)}.progress{height:9px;background:#e8ece9;border-radius:999px;overflow:hidden;margin:10px 0 18px}.bar{height:100%;background:var(--accent);width:0}.q{font-size:22px;font-weight:800;margin:6px 0 12px;line-height:1.9}.feedback{padding:13px 14px;border-radius:14px;margin-top:14px;font-weight:700}.feedback.good{background:#eef8f2;color:var(--good)}.feedback.bad{background:#fff0f0;color:var(--bad)}.explain{font-weight:500;color:var(--ink);margin-top:6px}.hidden{display:none!important}.pill{display:inline-block;background:var(--accent2);color:var(--accent);padding:5px 10px;border-radius:999px;font-weight:700;font-size:13px}.score{font-size:42px;font-weight:900;color:var(--accent);text-align:center;margin:18px 0}.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}.navline{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.navlink{color:var(--accent);text-decoration:none;font-weight:800;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}.stat{background:#f6f8f6;border:1px solid var(--line);border-radius:13px;padding:10px;text-align:center}.stat b{display:block;font-size:19px;color:var(--accent)}.stat span{font-size:12px;color:var(--muted)}@media(max-width:600px){.hero h1{font-size:24px}.q{font-size:20px}.stats{grid-template-columns:1fr}}
 
 .passage{margin:15px 0;padding:14px 16px;background:var(--accent2);border-inline-start:4px solid var(--accent);border-radius:12px;color:var(--ink);font-size:1.12rem;line-height:1.95}
-.passage summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:1rem}
+.passage div{white-space:pre-line}.passage summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:1rem}
 .option{text-align:right;width:100%;font-family:inherit;color:var(--ink)}
 .option.correct{border-color:var(--good);background:#e6f5ed}.option.wrong{border-color:var(--bad);background:#fceceb}
 .q{margin:14px 0;font-weight:700}.navline{margin-bottom:14px}
@@ -19,11 +19,13 @@
 <script>
 const $ = id => document.getElementById(id);
 const labels = ['أ','ب','ج','د'];
-const names = {2:'دُعَاءُ إِبْرَاهِيمَ عَلَيْهِ السَّلَامُ',3:'الْإِنْفَاقُ فِي سَبِيلِ اللَّهِ',4:'مِنْ آيَاتِ اللَّهِ تَعَالَى',5:'فِي كُلِّ كَبِدٍ رَطْبَةٍ أَجْرٌ',6:'أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللَّهِ؟'};
+const names = {"2": "دُعَاءُ إِبْرَاهِيمَ", "3": "الْإِنْفَاقُ فِي سَبِيلِ اللَّهِ", "4": "مِنْ آيَاتِ اللَّهِ تَعَالَى", "5": "فِي كُلِّ كَبِدٍ رَطْبَةٍ أَجْرٌ", "6": "أَعْطِ كُلَّ ذِي حَقٍّ حَقَّهُ", "7": "أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللَّهِ؟", "8": "مَنْ يُظِلُّهُمُ اللَّهُ فِي ظِلِّهِ يَوْمَ الْقِيَامَةِ", "9": "خُطْبَةُ أَبِي بَكْرٍ رَضِيَ اللَّهُ عَنْهُ", "10": "خُطْبَةُ طَارِقِ بْنِ زِيَادٍ", "11": "الرِّضَا بِقَضَاءِ اللَّهِ وَقَدَرِهِ", "12": "رِثَاءُ الْأَنْدَلُسِ", "13": "الْأَمْثَالُ وَالْحِكَمُ"};
 const countFormat = new Intl.NumberFormat('ar');
 const n = number => countFormat.format(number);
 const sections = examRaw.trim().split(/^@/m).filter(Boolean).map(block => {
-  const [header, passage, ...lines] = block.trim().split('\n');
+  const [header, ...body] = block.trim().split('\n');
+  const passage = body.filter(line=>!line.includes('|')).join('\n').replaceAll(' ** ', '    —    ');
+  const lines = body.filter(line=>line.includes('|'));
   const [course, source] = header.split('|');
   return {course, source, passage, items: lines.map(line => {
     const [question, answer, a, b, c, explanation] = line.split('|');
@@ -43,7 +45,7 @@ function shuffle(values) {
 }
 function choose() {
   const sets = course ? sections.filter(s=>s.course===course) : shuffle(Object.keys(names).map(c=>sections.filter(s=>s.course===c))).flat();
-  return sets.flatMap(s => (course?s.items:shuffle(s.items).slice(0,2)).map(q=>({...q, source:s.source, passage:s.passage})));
+  return sets.flatMap(s => (course?s.items:shuffle(s.items).slice(0,1)).map(q=>({...q, source:s.source, passage:s.passage})));
 }
 let queue = [], index = 0, score = 0, selected = null, checked = false;
 function show(panel) {
