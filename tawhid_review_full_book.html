@@ -34,7 +34,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Ari
 <div class="navline"><a class="navlink" href="index.html#tawhid">دروس التوحيد</a><a class="navlink" href="index.html">الرئيسية</a></div>
 <header class="hero"><h1>التَّوْحِيدُ – الْمُرَاجَعَةُ الشَّامِلَةُ</h1><p>١٠٠ سُؤَالٍ مِنَ الدُّرُوسِ الْعَشَرَةِ</p></header>
 <section id="home" class="card"><span class="pill">مُرَاجَعَةٌ مُوَجَّهَةٌ لِلِاخْتِبَارِ</span><h2>اخْتِبَارُ الِاخْتِيَارِ مِنْ مُتَعَدِّدٍ</h2><p>١٠٠ سُؤَالٍ مِنْ جَمِيعِ دُرُوسِ الْكِتَابِ، عَشَرَةُ أَسْئِلَةٍ مِنْ كُلِّ دَرْسٍ. اخْتَرْ إِجَابَةً وَاحِدَةً، ثُمَّ اضْغَطْ عَلَى «تَحَقَّقْ مِنَ الْإِجَابَةِ» لِمَعْرِفَةِ التَّصْحِيحِ وَالشَّرْحِ.</p><button class="btn" id="priority">الْمُرَاجَعَةُ السَّرِيعَةُ – ٥٠ سُؤَالًا</button><button class="btn secondary" id="start">الِاخْتِبَارُ الشَّامِلُ – ١٠٠ سُؤَالٍ</button><p class="small">الْمَصْدَرُ: كِتَابُ التَّوْحِيدِ – الْمُسْتَوَى الرَّابِعُ، الدُّرُوسُ ١–١٠.</p></section>
-<section class="card">
+<section id="lessons" class="card">
 <h2 style="margin-top:0">اخْتَرْ دَرْسًا وَاحِدًا</h2>
 <p class="small">١٠ أَسْئِلَةٍ أَسَاسِيَّةٍ مِنْ كُلِّ دَرْسٍ، مَعَ التَّصْحِيحِ وَإِعَادَةِ الْأَخْطَاءِ.</p>
 <div class="lesson-grid">
@@ -59,7 +59,7 @@ let pool=[],current=0,score=0,selected=-1,checked=false,mistakes=[],optionOrder=
 const el=id=>document.getElementById(id);
 const letters=["أ","ب","ج","د"];
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
-function show(id){["home","quiz","result"].forEach(n=>el(n).classList.toggle("hidden",n!==id));window.scrollTo({top:0,behavior:"smooth"})}
+function show(id){["home","lessons","quiz","result"].forEach(n=>el(n).classList.toggle("hidden",!(n===id||(n==="lessons"&&id==="home"))));window.scrollTo({top:0,behavior:"smooth"})}
 function start(ids){pool=shuffle(ids?ids.slice():ALL.map((_,i)=>i));current=0;score=0;mistakes=[];answersLog=[];selected=-1;show("quiz");render()}
 function render(){if(current>=pool.length){finish();return}
 const q=ALL[pool[current]];selected=-1;checked=false;optionOrder=shuffle([0,1,2,3]);
