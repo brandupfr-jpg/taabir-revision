@@ -1,0 +1,66 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>التوحيد – الدرس السابع | مراجعة المستوى الرابع</title><style>
+:root{--bg:#f7f5ef;--card:#fff;--ink:#1f2a24;--muted:#6f7a73;--accent:#2f6b4f;--accent2:#e6efe9;--good:#1f7a4d;--bad:#a33a3a;--line:#dfe6e1}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+.wrap{max-width:760px;margin:auto;padding:18px 14px 44px}
+.navline{display:flex;justify-content:space-between;gap:9px;margin-bottom:12px}
+.navlink{color:var(--accent);text-decoration:none;font-weight:800;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:12px}
+.hero{background:linear-gradient(135deg,#234c39,#3c7659);color:#fff;padding:24px 20px;border-radius:24px;box-shadow:0 10px 30px rgba(31,42,36,.12)}
+.hero h1{margin:0 0 5px;font-size:28px}.hero p{margin:0;opacity:.95}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 8px 22px rgba(31,42,36,.06)}
+.pill{display:inline-block;background:var(--accent2);color:var(--accent);padding:5px 11px;border-radius:999px;font-weight:800;font-size:13px}
+.btn{display:block;width:100%;border:0;border-radius:15px;padding:14px 16px;margin-top:13px;font:700 17px inherit;cursor:pointer;background:var(--accent);color:#fff}
+.btn.secondary{background:var(--accent2);color:var(--accent)}.btn.ghost{background:white;color:var(--accent);border:1px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.hidden{display:none!important}
+.toprow{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.small{font-size:14px;color:var(--muted)}
+.progress{height:9px;background:#e8ece9;border-radius:999px;overflow:hidden;margin:12px 0 19px}
+.bar{height:100%;background:var(--accent);width:0;transition:width .2s}
+.q{font-size:22px;font-weight:800;line-height:1.7;margin:6px 0 15px}
+.option{display:block;width:100%;text-align:right;background:white;border:2px solid var(--line);padding:12px 14px;border-radius:14px;margin:9px 0;font-size:17px;line-height:1.65;cursor:pointer;color:var(--ink)}
+.option.selected{border-color:var(--accent);background:#f0f6f2}.option.correct{border-color:var(--good);background:#eef8f2}.option.wrong{border-color:var(--bad);background:#fff0f0}
+.feedback{padding:14px;border-radius:14px;margin-top:15px;font-weight:800}
+.feedback.good{background:#eef8f2;color:var(--good)}.feedback.bad{background:#fff0f0;color:var(--bad)}
+.explain{font-size:16px;font-weight:500;line-height:1.8;margin-top:8px;color:var(--ink)}
+.score{font-size:44px;text-align:center;font-weight:900;color:var(--accent);margin:8px 0}
+.review{border:1px solid var(--line);border-radius:14px;padding:13px;margin:10px 0;background:#fbfcfb}
+.review b{display:block}.answer{color:var(--good);font-weight:750}
+.footer{text-align:center;color:var(--muted);font-size:13px;margin:20px 0}
+@media(max-width:540px){.hero h1{font-size:25px}.q{font-size:21px}.card{padding:15px}.option{font-size:17px}.navlink{font-size:14px}}
+</style></head>
+<body><div class="wrap">
+<div class="navline"><a class="navlink" href="index.html#tawhid">دروس التوحيد</a><a class="navlink" href="index.html">الرئيسية</a></div>
+<header class="hero"><h1>التَّوْحِيدُ – الدَّرْسُ السَّابِعُ</h1><p>الرِّيَاءُ</p></header>
+<section id="home" class="card"><span class="pill">مُرَاجَعَةٌ مُوَجَّهَةٌ لِلِاخْتِبَارِ</span><h2>اخْتِبَارُ الِاخْتِيَارِ مِنْ مُتَعَدِّدٍ</h2><p>١٠ أَسْئِلَةٍ أَسَاسِيَّةٍ مِنَ الدَّرْسِ السَّابِعُ. اخْتَرْ إِجَابَةً وَاحِدَةً، ثُمَّ اضْغَطْ عَلَى «تَحَقَّقْ مِنَ الْإِجَابَةِ» لِمَعْرِفَةِ التَّصْحِيحِ وَالشَّرْحِ.</p><button class="btn" id="start">ابْدَأِ التَّدْرِيبَ – ١٠ أَسْئِلَةٍ</button><p class="small">الْمَصْدَرُ: كِتَابُ التَّوْحِيدِ – الْمُسْتَوَى الرَّابِعُ، الدَّرْسُ السَّابِعُ.</p></section>
+<section id="quiz" class="card hidden"><div class="toprow"><span id="counter" class="pill"></span><span id="currentScore" class="small"></span></div><div class="progress"><div id="bar" class="bar"></div></div><div id="question" class="q"></div><div id="answers"></div><button id="check" class="btn" disabled>تَحَقَّقْ مِنَ الْإِجَابَةِ</button><div id="feedback"></div></section>
+<section id="result" class="card hidden"></section>
+<div class="footer">مُرَاجَعَةُ التَّوْحِيدِ – الْمُسْتَوَى الرَّابِعُ</div></div>
+<script>
+const ALL=[["مَا مَعْنَى الرِّيَاءِ شَرْعًا؟",0,["فِعْلُ الْخَيْرِ بِقَصْدِ أَنْ يَرَاهُ النَّاسُ وَيَحْمَدُوهُ","فِعْلُ الْخَيْرِ خَالِصًا لِلَّهِ","تَرْكُ الْعَمَلِ لِلتَّعَبِ","طَلَبُ الْعِلْمِ لِفَهْمِ الدِّينِ"],"هَذَا تَعْرِيفُ الرِّيَاءِ فِي الدَّرْسِ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ١ • ص ٢٩–٣١"],["أَيُّ مِثَالٍ يَدُلُّ عَلَى الرِّيَاءِ فِي الصَّلَاةِ؟",1,["أَنْ يُصَلِّيَ لِلَّهِ فِي خَلْوَتِهِ","أَنْ يُحَسِّنَ الرَّجُلُ صَلَاتَهُ لِيَرَاهُ النَّاسُ","أَنْ يُخْلِصَ النِّيَّةَ لِلَّهِ","أَنْ يُؤَدِّيَ الصَّلَاةَ وَقْتَهَا"],"ذَكَرَ الْكِتَابُ تَحْسِينَ الصَّلَاةِ لِيَرَاهُ النَّاسُ مِثَالًا لِلرِّيَاءِ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ١ • ص ٢٩–٣١"],["مَا شَرْطَا قَبُولِ الْعَمَلِ عِنْدَ اللَّهِ؟",2,["أَنْ يَكُونَ كَثِيرًا وَمَشْهُورًا","أَنْ يَرَاهُ النَّاسُ وَيَحْمَدُوهُ","أَنْ يَكُونَ صَالِحًا مُوَافِقًا لِلْكِتَابِ وَالسُّنَّةِ وَخَالِصًا لِلَّهِ","أَنْ يَكُونَ سَهْلًا وَقَصِيرًا"],"شَرْطَانِ أَسَاسِيَّانِ: الْمُتَابَعَةُ وَالْإِخْلَاصُ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ٢ • ص ٢٩–٣١"],["أَكْمِلْ قَوْلَهُ تَعَالَى: ﴿فَمَنْ كَانَ يَرْجُو لِقَاءَ رَبِّهِ ...﴾",3,["﴿وَالْعَصْرِ إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ﴾","﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾","﴿فَصَلِّ لِرَبِّكَ وَانْحَرْ﴾","﴿فَلْيَعْمَلْ عَمَلًا صَالِحًا وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا﴾"],"هَذِهِ آيَةُ سُورَةِ الْكَهْفِ (١١٠)، وَتَجْمَعُ شَرْطَيِ الْقَبُولِ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ٣ • ص ٢٩–٣١"],["مَا مَعْنَى «يُزَيِّنُ»؟",0,["يُحَسِّنُ وَيَجْعَلُ الشَّيْءَ حَسَنًا","يُفْسِدُ الشَّيْءَ","يَتْرُكُ الشَّيْءَ","يَكْتُبُ الشَّيْءَ"],"ذَكَرَ الدَّرْسُ: يُزَيِّنُ أَيْ يُحَسِّنُ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ٤ • ص ٢٩–٣١"],["مَا مَعْنَى «يُخَادِعُونَ»؟",1,["يُخْلِصُونَ فِي الْعَمَلِ","يُحَاوِلُونَ الْخَدِيعَةَ وَهِيَ الْكَذِبُ وَقَلْبُ الْأُمُورِ","يَتُوبُونَ إِلَى اللَّهِ","يَتَعَاوَنُونَ عَلَى الْخَيْرِ"],"هَذَا مَعْنَاهَا فِي قَائِمَةِ اللُّغَةِ بِالدَّرْسِ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ٤ • ص ٢٩–٣١"],["لِمَاذَا سُمِّيَ الرِّيَاءُ شِرْكًا خَفِيًّا؟",2,["لِأَنَّهُ لَا يَحْدُثُ فِي الْعِبَادَةِ","لِأَنَّهُ عَمَلٌ وَاجِبٌ","لِأَنَّ قَصْدَ صَاحِبِهِ يَخْفَى عَلَى كَثِيرٍ مِنَ النَّاسِ","لِأَنَّهُ لَا يَضُرُّ صَاحِبَهُ"],"يَخْفَى الرِّيَاءُ عَلَى النَّاسِ لِأَنَّ النِّيَّةَ فِي الْقَلْبِ.","الْمَرْجِعُ: الدَّرْسُ ص٣٠ • ص ٢٩–٣١"],["مَا مَعْنَى الْحَدِيثِ الْقُدْسِيِّ: «أَنَا أَغْنَى الشُّرَكَاءِ عَنِ الشِّرْكِ»؟",3,["أَنَّ اللَّهَ يَقْبَلُ الرِّيَاءَ","أَنَّ النَّاسَ يَمْلِكُونَ الثَّوَابَ","أَنَّ الْعَمَلَ لَا يَحْتَاجُ إِلَى نِيَّةٍ","أَنَّ اللَّهَ لَا يَقْبَلُ عَمَلًا أُشْرِكَ فِيهِ مَعَهُ غَيْرُهُ"],"فِي الْحَدِيثِ: «مَنْ عَمِلَ عَمَلًا أَشْرَكَ فِيهِ مَعِي غَيْرِي تَرَكْتُهُ وَشِرْكَهُ».","الْمَرْجِعُ: الدَّرْسُ ص٣٠ • ص ٢٩–٣١"],["مَا الْمُرَادُ بِحَدِيثِ «مَنْ سَمَّعَ سَمَّعَ اللَّهُ بِهِ»؟",0,["مَنْ قَصَدَ أَنْ يَسْمَعَ النَّاسُ بِعَمَلِهِ فَإِنَّ اللَّهَ يَفْضَحُهُ","مَنْ أَخْلَصَ نَالَ مَدْحَ النَّاسِ دَائِمًا","كُلُّ كَلَامٍ يَجِبُ إِخْفَاؤُهُ","مَنْ نَصَحَ غَيْرَهُ أَثِمَ"],"شَرَحَ الدَّرْسُ السُّمْعَةَ وَأَنَّ اللَّهَ يَفْضَحُ مَنْ قَصَدَ مَدْحَ النَّاسِ.","الْمَرْجِعُ: الدَّرْسُ ص٣٠ • ص ٢٩–٣١"],["أَيُّهَا مِنْ أَسْبَابِ الرِّيَاءِ وَنَتَائِجِهِ؟",1,["الْإِخْلَاصُ مِنْ أَسْبَابِهِ وَقَبُولُ الْعَمَلِ مِنْ نَتَائِجِهِ","حُبُّ الظُّهُورِ مِنْ أَسْبَابِهِ وَعَدَمُ قَبُولِ الْعَمَلِ مِنْ نَتَائِجِهِ","طَلَبُ الْعِلْمِ مِنْ أَسْبَابِهِ وَزِيَادَةُ الْأَجْرِ مِنْ نَتَائِجِهِ","الْخَوْفُ مِنَ اللَّهِ مِنْ أَسْبَابِهِ وَالْفَوْزُ بِالْجَنَّةِ مِنْ نَتَائِجِهِ"],"ذَكَرَ الْكِتَابُ حُبَّ الظُّهُورِ وَالرِّئَاسَةِ مِنْ أَسْبَابِهِ وَعَدَمَ قَبُولِ الْعَمَلِ مِنْ نَتَائِجِهِ.","الْمَرْجِعُ: الْمُنَاقَشَةُ ٥ • ص ٢٩–٣١"]];
+let pool=[],current=0,score=0,selected=-1,checked=false,mistakes=[],optionOrder=[];
+const el=id=>document.getElementById(id);
+const letters=["أ","ب","ج","د"];
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function show(id){["home","quiz","result"].forEach(n=>el(n).classList.toggle("hidden",n!==id));window.scrollTo({top:0,behavior:"smooth"})}
+function start(ids){pool=ids?ids.slice():ALL.map((_,i)=>i);current=0;score=0;mistakes=[];selected=-1;show("quiz");render()}
+function render(){if(current>=pool.length){finish();return}
+const q=ALL[pool[current]];selected=-1;checked=false;optionOrder=shuffle([0,1,2,3]);
+el("counter").textContent="السُّؤَالُ "+(current+1)+" مِنْ "+pool.length+" • "+q[4];
+el("currentScore").textContent="الصَّحِيحَةُ حَتَّى الْآنَ: "+score;
+el("bar").style.width=((current/pool.length)*100)+"%";
+el("question").textContent=q[0];
+el("answers").replaceChildren();
+optionOrder.forEach((originalIndex,i)=>{const btn=document.createElement("button");btn.type="button";btn.className="option";btn.textContent=letters[i]+") "+q[2][originalIndex];btn.dataset.answer=String(originalIndex);btn.onclick=()=>{if(checked)return;selected=originalIndex;el("answers").querySelectorAll(".option").forEach(b=>b.classList.toggle("selected",b===btn));el("check").disabled=false};el("answers").appendChild(btn)});
+el("check").disabled=true;el("check").classList.remove("hidden");el("feedback").replaceChildren();el("check").onclick=checkAnswer}
+function checkAnswer(){if(selected<0||checked)return;checked=true;const q=ALL[pool[current]],ok=selected===q[1];if(ok)score++;else mistakes.push(pool[current]);
+el("answers").querySelectorAll(".option").forEach(b=>{const val=Number(b.dataset.answer);b.disabled=true;if(val===q[1])b.classList.add("correct");if(val===selected&&!ok)b.classList.add("wrong")});
+const f=el("feedback"),msg=document.createElement("div");msg.className="feedback "+(ok?"good":"bad");
+const head=document.createElement("div");head.textContent=ok?"✅ إِجَابَةٌ صَحِيحَةٌ":"❌ إِجَابَةٌ خَاطِئَةٌ";
+const exp=document.createElement("div");exp.className="explain";exp.textContent=(ok?"":"الْإِجَابَةُ الصَّحِيحَةُ: "+q[2][q[1]]+" — ")+q[3];
+msg.append(head,exp);const next=document.createElement("button");next.className="btn secondary";next.textContent=current+1===pool.length?"عَرْضُ النَّتِيجَةِ":"السُّؤَالُ التَّالِي";next.onclick=()=>{current++;render()};f.append(msg,next);
+el("check").classList.add("hidden")}
+function finish(){show("result");const node=el("result");node.replaceChildren();const title=document.createElement("h2");title.textContent="نَتِيجَةُ التَّدْرِيبِ";const sc=document.createElement("div");sc.className="score";sc.textContent=score+" / "+pool.length;const sum=document.createElement("p");sum.style.textAlign="center";sum.textContent="نِسْبَةُ الْإِجَابَاتِ الصَّحِيحَةِ: "+Math.round((score/pool.length)*100)+"٪";node.append(title,sc,sum);if(mistakes.length){const h=document.createElement("h3");h.textContent="الْأَسْئِلَةُ الَّتِي تَحْتَاجُ إِلَى مُرَاجَعَةٍ";node.append(h);mistakes.forEach(idx=>{const q=ALL[idx];const div=document.createElement("div");div.className="review";const a=document.createElement("b");a.textContent=q[0];const ans=document.createElement("div");ans.className="answer";ans.textContent="الْإِجَابَةُ: "+q[2][q[1]];div.append(a,ans);node.append(div)});const btn=document.createElement("button");btn.className="btn secondary";btn.textContent="إِعَادَةُ الْأَسْئِلَةِ الْخَاطِئَةِ ("+mistakes.length+")";const retry=mistakes.slice();btn.onclick=()=>start(retry);node.append(btn)}
+const all=document.createElement("button");all.className="btn";all.textContent="إِعَادَةُ الِاخْتِبَارِ الْكَامِلِ";all.onclick=()=>start();const back=document.createElement("button");back.className="btn ghost";back.textContent="الْعَوْدَةُ إِلَى الْقَائِمَةِ";back.onclick=()=>show("home");node.append(all,back)}
+el("start").onclick=()=>start();
+</script></body></html>
