@@ -62,7 +62,7 @@ button,a{font:inherit}
         </button>
         <button class="subject active" onclick="openSubject('arabic')">
           <span class="arrow">←</span><div class="icon">📘</div>
-          <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">ثمانية دروس متاحة</span>
+          <h3>دروس اللغة العربية / التدريبات</h3><p>النحو والصرف والإعراب والتحويلات</p><span class="badge">١٦ اخْتِبَارًا أَصْلِيًّا</span>
         </button>
         <button class="subject active" onclick="openSubject('tafsir')">
           <div class="icon">📖</div><h3>التَّفْسِيرُ</h3><p>الدُّرُوسُ ٥–٨</p><span class="badge">٦٠ سُؤَالًا · ١٥ لِكُلِّ دَرْسٍ</span>
@@ -91,99 +91,25 @@ button,a{font:inherit}
   <main id="arabic" class="screen">
     <section class="section">
       <a class="back" href="#" onclick="goHome(event)">الرجوع إلى المواد</a>
-      <div class="section-title">
-        <h2>دروس اللغة العربية / التدريبات</h2>
-        <span>اختر الدرس</span>
-      </div>
-
+      <div class="section-title"><h2>اخْتِبَارَاتُ التَّدْرِيبَاتِ اللُّغَوِيَّةِ</h2><span>١٦ اخْتِبَارًا · ٣٠٠ سُؤَالٍ</span></div>
       <div class="panel">
-        <div class="course-grid">
-          <a class="course available" href="tadribat_lesson1.html">
-            <span class="status">متاح</span>
-            <h3>الدرس الأول</h3>
-            <p>الفعل المتعدي واللازم، وطرق التعدية، وتمارين الدرس الأول – ٧٣ سؤالا</p>
-          </a>
-          <a class="course available" href="tadribat_lesson2.html">
-            <span class="status">متاح</span>
-            <h3>الدرس الثاني</h3>
-            <p>باب فاعل، قد، لكن، ذوو وأولو، كاف الخطاب، اللام المزحلقة – ١٠٥ أسئلة</p>
-          </a>
-          <a class="course available" href="tadribat_lesson3.html">
-            <span class="status">متاح</span>
-            <h3>الدرس الثالث</h3>
-            <p>باب تفعّل، المطاوعة، حذف إحدى التاءين، لمّا الحينية، والاختصاص – ٨٣ سؤالا</p>
-          </a>
-          <a class="course available" href="tadribat_exams_1_4.html#lesson4">
-            <span class="status">اختبار حقيقي</span>
-            <h3>الدرس الرابع</h3>
-            <p>باب تفاعل، ليت، لا النافية للجنس، البدل، إن وأخواتها – ٢٠ سؤالا من اختبارك الحقيقي</p>
-          </a>
-          <a class="course available" href="tadribat_lesson5.html">
-            <span class="status">متاح</span>
-            <h3>الدرس الخامس</h3>
-            <p>باب انفعل، المطاوعة، لولا ولوما، اسم الإشارة نعتًا، التغليب، وإضافة الظرف – ٧٦ سؤالًا</p>
-          </a>
-          <a class="course available" href="tadribat_lesson6.html"><span class="status">متاح</span><h3>الدرس السادس</h3><p>باب افتعل، الإبدال، ظنّ، إذا الفجائية وصيغ المبالغة — ٧٩ سؤالًا مع التصحيح</p></a>
-          <a class="course available" href="tadribat_lesson6_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>اخْتِبَارُ الدَّرْسِ السَّادِسِ</h3><p>بَابُ افْتَعَلَ وَقَوَاعِدُ الدَّرْسِ — ٢١ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson7.html"><span class="status">متاح</span><h3>الدرس السابع</h3><p>باب افعلّ وافعالّ، رأى، ما المصدرية وعسى — ٥٧ سؤالًا مع التصحيح</p></a>
-          <a class="course available" href="tadribat_lesson7_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>اخْتِبَارُ الدَّرْسِ السَّابِعِ</h3><p>عَسَى، وَرَأَى، وَمَا الْمَصْدَرِيَّةُ، وَالصَّرْفُ — ١٥ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson8.html"><span class="status">متاح</span><h3>الدرس الثامن</h3><p>باب استفعل، نواصب المضارع، الحال ومعاني جعل — ٦٣ سؤالًا مع التصحيح</p></a>
-          <a class="course available" href="tadribat_lesson9_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>الدَّرْسُ التَّاسِعُ</h3><p>الرُّبَاعِيُّ الْمُجَرَّدُ وَالْمَزِيدُ — ١٦ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson10_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>الدَّرْسُ الْعَاشِرُ</h3><p>الضَّمَائِرُ — ١١ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lessons11_12_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>الدَّرْسَانِ الْحَادِيَ عَشَرَ وَالثَّانِيَ عَشَرَ</h3><p>الْمَفْعُولُ الْمُطْلَقُ وَالْمَفْعُولُ لِأَجْلِهِ — ٣٠ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson13_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>الدَّرْسُ الثَّالِثُ عَشَرَ</h3><p>التَّمْيِيزُ وَالتَّعَجُّبُ — ٢٠ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson14_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>الدَّرْسُ الرَّابِعَ عَشَرَ</h3><p>الْحَالُ وَصَاحِبُهَا — ٢٠ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-          <a class="course available" href="tadribat_lesson17_exam.html"><span class="status">اخْتِبَارٌ تَدْرِيبِيٌّ</span><h3>اخْتِبَارُ الدَّرْسِ السَّابِعَ عَشَرَ</h3><p>الْمَمْنُوعُ مِنَ الصَّرْفِ — ٢٠ سُؤَالًا مَعَ التَّصْحِيحِ</p></a>
-        </div>
-
-        <div class="group-box">
-          <div class="group-title">مراجعة الدرس الأول</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_lesson1.html" style="text-decoration:none;color:inherit"><b>اختيار واحد</b><span>٦٥ سؤالا تطبيقيا من تمارين الدرس.</span></a>
-            <a class="group" href="tadribat_lesson1.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>٨ أسئلة بإجابتين صحيحتين أو أكثر.</span></a>
-          </div>
-        </div>
-        <div class="group-box">
-          <div class="group-title">مراجعة الدرس الثاني</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_lesson2.html" style="text-decoration:none;color:inherit"><b>اختيار واحد</b><span>٩٣ سؤالا تطبيقيا من تمارين الدرس وقواعده.</span></a>
-            <a class="group" href="tadribat_lesson2.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>١٢ سؤالا بإجابتين صحيحتين أو أكثر.</span></a>
-          </div>
-        </div>
-        <div class="group-box">
-          <div class="group-title">مراجعة الدرس الثالث</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_lesson3.html" style="text-decoration:none;color:inherit"><b>اختيار واحد</b><span>٧٥ سؤالا تطبيقيا من تمارين الدرس وقواعده.</span></a>
-            <a class="group" href="tadribat_lesson3.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد</b><span>٨ أسئلة بإجابتين صحيحتين أو أكثر.</span></a>
-          </div>
-        </div>
-        <div class="group-box">
-          <div class="group-title">مراجعة الدرس الخامس</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_lesson5.html" style="text-decoration:none;color:inherit"><b>اختيار واحد — ٦٨ سؤالًا</b><span>تدريبات في الصرف والنحو والإعراب على نمط اختباراتك السابقة.</span></a>
-            <a class="group" href="tadribat_lesson5.html" style="text-decoration:none;color:inherit"><b>اختيار متعدد — ٨ أسئلة</b><span>اختر جميع الإجابات الصحيحة، أو خُض اختبارًا شاملًا من ٧٦ سؤالًا.</span></a>
-          </div>
-        </div>
-        <div class="group-box">
-          <div class="group-title">الدرس الخامس — تدريب تكميلي على تمارين الكتاب</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_lesson5_exam_training.html" style="text-decoration:none;color:inherit"><b>٦٥ سؤالًا مع التصحيح والمراجع</b><span>٥٧ سؤالًا باختيار واحد و٨ أسئلة باختيار متعدد، مع أولوية التمارين ٣، ٤، ٥، ١٠.</span></a>
-            <a class="group" href="tadribat_lesson5_exam.html" style="text-decoration:none;color:inherit"><b>اخْتِبَارُ الدَّرْسِ الْخَامِسِ — ١١ سُؤَالًا</b><span>بَابُ انْفَعَلَ، وَلَوْلَا، وَهَاءُ السَّكْتِ · مَعَ التَّصْحِيحِ</span></a>
-          </div>
-        </div>
-        <div class="group-box"><div class="group-title">مراجعة الدروس ٦ و٧ و٨</div><div class="group-grid"><a class="group" href="tadribat_review_6_8.html" style="text-decoration:none;color:inherit"><b>١٩٩ سؤالًا من الدروس الثلاثة</b><span>اختيار واحد، واختيار متعدد، واختبار شامل مع التصحيح والمراجع.</span></a></div></div>
-        <div class="group-box">
-          <div class="group-title">أهم أسئلة الدروس ١ إلى ٨</div>
-          <div class="group-grid"><a class="group" href="tadribat_important_1_8.html" style="text-decoration:none;color:inherit"><b>٨٠ سؤالًا مهمًّا — ١٠ أسئلة لكل درس</b><span>مراجعة مركزة لأهم القواعد وتطبيقاتها، مع التصحيح والمراجع.</span></a></div>
-        </div>
-        <div class="group-box">
-          <div class="group-title">الاختبارات الحقيقية التي أرسلتها</div>
-          <div class="group-grid">
-            <a class="group" href="tadribat_exams_1_4.html" style="text-decoration:none;color:inherit"><b>الدروس ١–٤ — ٦١ سؤالًا</b><span>جميع أسئلة اختباراتك الحقيقية كما أرسلتها، مع الاختيارات والتصحيح.</span></a>
-            <a class="group" href="tadribat_exams_1_4.html#all" style="text-decoration:none;color:inherit"><b>اختبار شامل</b><span>تدرّب على الأسئلة الحقيقية الأربعة متتابعة في اختبار واحد.</span></a>
-          </div>
-        </div>
-        <div class="note">الأولوية لتمارين الكتاب، مع أسئلة تطبيقية على نمط الاختبار الحقيقي.</div>
+        <div class="note">أَسْئِلَةُ الْمُدَرِّسِ بِتَرْتِيبِهَا الْأَصْلِيِّ، مَعَ التَّصْحِيحِ وَالدَّرَجَاتِ الْمُعْتَمَدَةِ.</div>
+        <div class="course-grid"><a class="course available" href="tadribat_examens.html#lesson1"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ الْأَوَّلُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson2"><span class="status">١٥ سُؤَالًا · ١٥ دَرَجَةً</span><h3>الدَّرْسُ الثَّانِي</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson3"><span class="status">٦ سُؤَالًا · ٦ دَرَجَةً</span><h3>الدَّرْسُ الثَّالِثُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson4"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ الرَّابِعُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson5"><span class="status">١١ سُؤَالًا · ١١ دَرَجَةً</span><h3>الدَّرْسُ الْخَامِسُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson6"><span class="status">٢١ سُؤَالًا · ٢١ دَرَجَةً</span><h3>الدَّرْسُ السَّادِسُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson7"><span class="status">١٥ سُؤَالًا · ١٥ دَرَجَةً</span><h3>الدَّرْسُ السَّابِعُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson8"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ الثَّامِنُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson9"><span class="status">١٦ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ التَّاسِعُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson10"><span class="status">١١ سُؤَالًا · ١٥ دَرَجَةً</span><h3>الدَّرْسُ الْعَاشِرُ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson1112"><span class="status">٣٠ سُؤَالًا · ٣٠ دَرَجَةً</span><h3>الدَّرْسَانِ الْحَادِي عَشَرَ وَالثَّانِي عَشَرَ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson13"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ الثَّالِثَ عَشَرَ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson14"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ الرَّابِعَ عَشَرَ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson15"><span class="status">٣٥ سُؤَالًا · ٣٥ دَرَجَةً</span><h3>الدَّرْسُ الْخَامِسَ عَشَرَ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson16"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ السَّادِسَ عَشَرَ</h3></a>
+<a class="course available" href="tadribat_examens.html#lesson17"><span class="status">٢٠ سُؤَالًا · ٢٠ دَرَجَةً</span><h3>الدَّرْسُ السَّابِعَ عَشَرَ</h3></a></div>
       </div>
     </section>
   </main>
