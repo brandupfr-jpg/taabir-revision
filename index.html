@@ -80,7 +80,7 @@ button,a{font:inherit}
           <div class="icon">📝</div><h3>النصوص الأدبية</h3><p>النصوص والمعاني والقواعد</p><span class="badge">خمسة دروس ومراجعة مجمعة</span>
         </button>
         <button id="tarikh-card" class="subject active" onclick="openSubject('tarikh')">
-          <div class="icon">🏛️</div><h3>تاريخ الخلفاء الراشدين · السيرة</h3><p>أبو بكر الصديق وعمر بن الخطاب</p><span class="badge">٢٠ سؤالًا لكل اختبار</span>
+          <div class="icon">🏛️</div><h3>تاريخ الخلفاء الراشدين · السيرة</h3><p>أربعة اختبارات بتصحيح فوري</p><span class="badge">٢٠ سؤالًا لكل اختبار</span>
         </button>
       </div>
     </section>
@@ -213,7 +213,7 @@ button,a{font:inherit}
 const labels={arabic:"دروس اللغة العربية / التدريبات",tafsir:"التفسير",qiraa:"القراءة",tawhid:"التوحيد",sahaba:"صور من حياة الصحابة",nusus:"النصوص الأدبية",tarikh:"تاريخ الخلفاء الراشدين"};
 function hideAll(){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("show"))}
 function openSubject(id){
-  if(id==="tarikh"){location.href="sira.html?v=tadribat40";return;}
+  if(id==="tarikh"){location.href="sira.html?v=tadribat80";return;}
   hideAll();
   if(id==="taabir"){document.getElementById("taabir").classList.add("show");location.hash="taabir"}
   else if(id==="qiraa"){document.getElementById("qiraa").classList.add("show");location.hash="qiraa"}
