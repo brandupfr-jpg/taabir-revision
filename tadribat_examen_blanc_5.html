@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>الِاخْتِبَارُ التَّجْرِيبِيُّ الْخَامِسُ</title>
+<style>
+:root{--bg:#f7f5ef;--card:#fff;--ink:#1f2a24;--muted:#6f7a73;--accent:#2f6b4f;--accent2:#e6efe9;--good:#1f7a4d;--bad:#a33a3a;--line:#dfe6e1;--gold:#c99525}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
+.wrap{max-width:880px;margin:auto;padding:18px 14px 48px}
+.hero{background:linear-gradient(135deg,#234c39,#3c7659);color:#fff;padding:26px 22px;border-radius:24px;box-shadow:0 10px 30px rgba(31,42,36,.12)}
+.hero h1{margin:0 0 6px;font-size:30px}.hero p{margin:0;opacity:.94;font-size:17px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:14px;box-shadow:0 8px 22px rgba(31,42,36,.06)}
+.navline{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}.navlink{color:var(--accent);text-decoration:none;font-weight:800;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:12px}
+.pill{display:inline-block;background:var(--accent2);color:var(--accent);padding:5px 11px;border-radius:999px;font-weight:800;font-size:13px}
+.real{background:#fff7df;color:#7a5915;border:1px solid #ecd99a}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:16px 0}.stat{background:#f6f8f6;border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.stat b{display:block;font-size:20px;color:var(--accent)}.stat span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{border:0;border-radius:16px;padding:15px 16px;font-size:17px;font-weight:800;cursor:pointer;background:var(--accent);color:#fff;width:100%;font-family:inherit}
+.btn.secondary{background:var(--accent2);color:var(--accent)}.btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--line)}.btn.gold{background:#fff7df;color:#72500d;border:1px solid #ecd99a}.btn:disabled{opacity:.5}
+.small{font-size:14px;color:var(--muted)}
+.hidden{display:none!important}
+.toprow{display:flex;justify-content:space-between;gap:12px;align-items:center}.progress{height:9px;background:#e8ece9;border-radius:999px;overflow:hidden;margin:10px 0 18px}.bar{height:100%;background:var(--accent);width:0}
+.qnum{font-size:14px;color:var(--muted);font-weight:700}.q{font-size:23px;font-weight:850;margin:6px 0 14px;line-height:1.9}
+.option{display:block;width:100%;text-align:right;background:#fff;border:2px solid var(--line);padding:14px;border-radius:14px;margin:10px 0;font-size:18px;cursor:pointer;line-height:1.8;font-family:inherit}.option.selected{border-color:var(--accent);background:#f0f6f2}.option.correct{border-color:var(--good);background:#eef8f2}.option.wrong{border-color:var(--bad);background:#fff0f0}
+.feedback{padding:13px 14px;border-radius:14px;margin-top:14px;font-weight:800}.feedback.good{background:#eef8f2;color:var(--good)}.feedback.bad{background:#fff0f0;color:var(--bad)}.answer{font-weight:600;color:var(--ink);margin-top:6px}
+.score{font-size:44px;font-weight:900;color:var(--accent);text-align:center;margin:18px 0}
+.review-item{border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;background:#fff}.review-item h3{margin:0 0 8px;font-size:19px}.review-options{margin:0;padding-right:22px;color:#425148}.review-answer{margin-top:10px;background:#eef8f2;border-radius:12px;padding:10px 12px;color:var(--good);font-weight:800}
+.section-title{font-size:22px;margin:6px 0 12px}
+.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+@media(max-width:680px){.hero h1{font-size:25px}.q{font-size:20px}.grid,.stats{grid-template-columns:1fr}.option{font-size:17px}}
+.exam-links .navlink{display:flex;flex-direction:column;gap:4px;white-space:normal}.q,.option,.review-item h3,.review-item li,.answer,.review-answer{white-space:pre-line}
+</style>
+</head>
+<body><div class="wrap">
+<div class="navline"><a class="navlink" href="index.html#arabic">دروس اللغة العربية / التدريبات</a><a class="navlink" href="index.html">الرئيسية</a></div>
+<section class="hero"><h1>الِاخْتِبَارُ التَّجْرِيبِيُّ الْخَامِسُ</h1><p>التَّدْرِيبَاتُ اللُّغَوِيَّةُ · الْمُسْتَوَى الرَّابِعُ</p></section>
+<section id="home" class="card"><h2 class="section-title">٤٠ سُؤَالًا · ٤٠ دَرَجَةً</h2><p>سُؤَالَانِ لِكُلِّ دَرْسٍ وَسِتَّةُ أَسْئِلَةٍ إِضَافِيَّةٍ، وَفِي الِاخْتِبَارِ ١٣ سُؤَالًا فِي الصَّرْفِ. لِكُلِّ سُؤَالٍ أَرْبَعُ جُمَلٍ، مِنْهَا جُمْلَةٌ وَاحِدَةٌ تُطَابِقُ الْمَطْلُوبَ. اِخْتَرْ إِجَابَةً وَاحِدَةً. يَظْهَرُ التَّصْحِيحُ وَالشَّرْحُ بَعْدَ تَأْكِيدِ إِجَابَتِكَ.</p><a class="navlink" href="#mock5">اِبْدَأِ الِاخْتِبَارَ</a></section>
+<section id="quiz" class="card hidden"></section><section id="result" class="card hidden"></section><section id="review" class="card hidden"></section>
+</div><script>const exams={"mock5":{"title":"الِاخْتِبَارُ التَّجْرِيبِيُّ الْخَامِسُ","questions":[{"unit":3,"tag":"ن","q":"أَيُّ الْجُمَلِ تَشْتَمِلُ عَلَى اسْمٍ مَنْصُوبٍ عَلَى الِاخْتِصَاصِ؟","o":["نَحْنُ الْمُهَنْدِسِينَ نُتْقِنُ عَمَلَنَا.","نَحْنُ مُهَنْدِسُونَ.","كَرَّمَ الْمُدِيرُ الْمُهَنْدِسِينَ.","يَا مُهَنْدِسُونَ، أَتْقِنُوا الْعَمَلَ."],"a":0,"e":"«الْمُهَنْدِسِينَ» اسْمٌ مَخْصُوصٌ مَنْصُوبٌ بِفِعْلٍ مَحْذُوفٍ تَقْدِيرُهُ «أَخُصُّ».","p":1},{"unit":16,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا أَمْرٌ مُؤَكَّدٌ بِنُونِ التَّوْكِيدِ الْخَفِيفَةِ؟","o":["اِفْتَحَنَّ بَابَكَ يَا خَالِدُ.","اِفْتَحْنَ أَبْوَابَكُنَّ يَا طَالِبَاتُ.","اِفْتَحْ بَابَكَ يَا خَالِدُ.","اِفْتَحَنْ بَابَكَ يَا خَالِدُ."],"a":3,"e":"النُّونُ فِي «اِفْتَحَنْ» سَاكِنَةٌ غَيْرُ مُشَدَّدَةٍ، وَفِي «اِفْتَحْنَ» نُونُ النِّسْوَةِ.","p":1},{"unit":6,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا فِعْلٌ عَلَى «اِفْتَعَلَ» أُبْدِلَتْ تَاؤُهُ طَاءً؟","o":["اِضْطَرَبَ الْبَحْرُ.","اِزْدَحَمَ الشَّارِعُ.","اِنْكَسَرَ الزُّجَاجُ.","اِبْتَسَمَ الضَّيْفُ."],"a":0,"e":"فِي «اِضْطَرَبَ» صَارَتْ تَاءُ الِافْتِعَالِ طَاءً بَعْدَ الضَّادِ.","p":1},{"unit":9,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا فِعْلٌ رُبَاعِيٌّ مُجَرَّدٌ؟","o":["تَدَحْرَجَ الْحَجَرُ.","اِقْشَعَرَّ الْجِلْدُ.","اِسْتَغْفَرَ الرَّجُلُ.","وَسْوَسَ الشَّيْطَانُ لَهُ."],"a":3,"e":"«وَسْوَسَ» عَلَى «فَعْلَلَ»، وَحُرُوفُهُ الْأَرْبَعَةُ أَصْلِيَّةٌ.","p":1},{"unit":11,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «بَعْضُ» نَائِبَةٌ عَنِ الْمَفْعُولِ الْمُطْلَقِ؟","o":["تَرَدَّدْتُ بَعْضَ التَّرَدُّدِ.","قَرَأْتُ بَعْضَ الْكِتَابِ.","حَضَرَ بَعْضُ الطُّلَّابِ.","مَرَرْتُ بِبَعْضِ الْأَصْدِقَاءِ."],"a":0,"e":"«بَعْضَ» أُضِيفَتْ إِلَى مَصْدَرِ الْفِعْلِ «التَّرَدُّدِ»، فَنَابَتْ عَنْهُ.","p":1},{"unit":12,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا مَصْدَرٌ مَنْصُوبٌ يُبَيِّنُ سَبَبَ الْفِعْلِ؟","o":["أَغْلَقْتُ النَّافِذَةَ إِغْلَاقًا مُحْكَمًا.","أَغْلَقْتُ النَّافِذَةَ مُسْرِعًا.","أَغْلَقْتُ النَّافِذَةَ خَشْيَةَ الْبَرْدِ.","أَغْلَقْتُ النَّافِذَةَ قَبْلَ الْمَغْرِبِ."],"a":2,"e":"«خَشْيَةَ الْبَرْدِ» مَفْعُولٌ لِأَجْلِهِ يُبَيِّنُ سَبَبَ الْإِغْلَاقِ.","p":1},{"unit":5,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا اسْمُ فَاعِلٍ مِنْ فِعْلٍ عَلَى «اِنْفَعَلَ»؟","o":["وَجَدْتُ الْبَابَ مَفْتُوحًا.","رَأَيْتُ الرَّجُلَ مُسْتَبْشِرًا.","وَجَدْتُ الْبَابَ مُنْفَتِحًا.","رَأَيْتُ الطَّالِبَ مُتَأَخِّرًا."],"a":2,"e":"«مُنْفَتِحٌ» اسْمُ فَاعِلٍ مِنْ «اِنْفَتَحَ».","p":1},{"unit":7,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا فِعْلٌ عَلَى «اِفْعَالَّ»؟","o":["اِصْفَرَّ الْوَرَقُ.","اِصْفَارَّ الْوَرَقُ.","تَفَتَّحَ الزَّهْرُ.","ذَبُلَ النَّبَاتُ."],"a":1,"e":"«اِصْفَارَّ» فِيهِ أَلِفٌ بَعْدَ عَيْنِ الْفِعْلِ، بِخِلَافِ «اِصْفَرَّ».","p":1},{"unit":13,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا تَعَجُّبٌ عَلَى صِيغَةِ «أَفْعِلْ بِهِ»؟","o":["مَا أَجْمَلَ الْوَفَاءَ!","الْوَفَاءُ خُلُقٌ جَمِيلٌ.","هَلِ الْوَفَاءُ خُلُقٌ جَمِيلٌ؟","أَجْمِلْ بِالْوَفَاءِ!"],"a":3,"e":"«أَجْمِلْ بِالْوَفَاءِ!» عَلَى «أَفْعِلْ بِهِ»، وَ«مَا أَجْمَلَ» عَلَى الصِّيغَةِ الْأُخْرَى.","p":1},{"unit":8,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا اسْمُ مَفْعُولٍ مِنْ فِعْلٍ عَلَى «اِسْتَفْعَلَ»؟","o":["الْعَامِلُ مُسْتَعْمِلٌ لِلنِّظَامِ.","النِّظَامُ مُنَظَّمٌ.","الْقَرَارُ مَكْتُوبٌ.","النِّظَامُ الْمُسْتَعْمَلُ سَهْلٌ."],"a":3,"e":"«مُسْتَعْمَلٌ» بِفَتْحِ الْمِيمِ قَبْلَ اللَّامِ اسْمُ مَفْعُولٍ مِنْ «اِسْتَعْمَلَ».","p":1},{"unit":7,"tag":"ن","q":"أَيُّ جُمْلَةٍ تَكْتَفِي فِيهَا «عَسَى» بِفَاعِلٍ وَلَا تَحْتَاجُ إِلَى خَبَرٍ؟","o":["عَسَى الْقِطَارُ أَنْ يَصِلَ مُبَكِّرًا.","عَسَيْنَا أَنْ نَصِلَ مُبَكِّرِينَ.","عَسَى الطَّالِبَانِ أَنْ يَصِلَا مُبَكِّرَيْنِ.","عَسَى أَنْ يَصِلَ الْقِطَارُ مُبَكِّرًا."],"a":3,"e":"«أَنْ يَصِلَ الْقِطَارُ» مَصْدَرٌ مُؤَوَّلٌ يَكْفِي فَاعِلًا لِـ«عَسَى» التَّامَّةِ.","p":1},{"unit":6,"tag":"ن","q":"أَيُّ جُمْلَةٍ تَدُلُّ فِيهَا «إِذَا» عَلَى الْمُفَاجَأَةِ؟","o":["إِذَا انْتَهَيْتَ فَاتَّصِلْ بِي.","خَرَجْتُ فَإِذَا السَّاحَةُ مُمْتَلِئَةٌ.","إِذَا طَلَعَتِ الشَّمْسُ خَرَجْنَا.","إِذَا وَصَلَ الْقِطَارُ سَافَرْنَا."],"a":1,"e":"جُمْلَةُ «السَّاحَةُ مُمْتَلِئَةٌ» تَصِفُ مَا فَاجَأَ الْمُتَكَلِّمَ.","p":1},{"unit":9,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «مِنْ» بِمَعْنَى «بَعْضِ»؟","o":["أَخَذْتُ مِنَ الدَّرَاهِمِ.","سَافَرْتُ مِنَ الْمَدِينَةِ إِلَى مَكَّةَ.","خَرَجْتُ مِنَ الْبَيْتِ.","بَدَأْتُ مِنَ الصَّفْحَةِ الْخَامِسَةِ."],"a":0,"e":"الْمَعْنَى: أَخَذْتُ بَعْضَ الدَّرَاهِمِ.","p":1},{"unit":7,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «رَأَى» الْقَلْبِيَّةُ؟","o":["رَأَيْتُ الْهِلَالَ فِي السَّمَاءِ.","رَأَيْتُ الصِّدْقَ سَبَبًا لِلنَّجَاةِ.","رَأَيْتُ الْبَحْرَ مِنَ النَّافِذَةِ.","رَأَيْتُ أَخِي بِعَيْنَيَّ."],"a":1,"e":"«رَأَى» بِمَعْنَى «عَلِمَ»؛ وَمَفْعُولَاهَا «الصِّدْقَ» وَ«سَبَبًا».","p":1},{"unit":2,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا اللَّامُ الْمُزَحْلَقَةُ؟","o":["الْكِتَابُ لِلطَّالِبِ.","لِيَقْرَأْ خَالِدٌ الدَّرْسَ.","إِنَّ الطَّالِبَ لَمُجْتَهِدٌ.","جِئْتُ لِأَتَعَلَّمَ."],"a":2,"e":"اللَّامُ فِي «لَمُجْتَهِدٌ» دَخَلَتْ عَلَى خَبَرِ «إِنَّ» لِلتَّوْكِيدِ.","p":1},{"unit":11,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا مَفْعُولٌ مُطْلَقٌ يُحَدِّدُ نَوْعَ الْفِعْلِ؟","o":["حَفِظَ الطَّالِبُ النَّصَّ حِفْظًا.","حَفِظَ الطَّالِبُ النَّصَّ حِفْظًا مُتْقَنًا.","قَرَأَ الطَّالِبُ النَّصَّ قِرَاءَتَيْنِ.","قَرَأَ الطَّالِبُ النَّصَّ رَغْبَةً فِي الْفَهْمِ."],"a":1,"e":"«حِفْظًا» مَصْدَرٌ وُصِفَ بِـ«مُتْقَنًا»، فَبَيَّنَ نَوْعَ الْحِفْظِ.","p":1},{"unit":13,"tag":"ن","q":"أَيُّ جُمْلَةٍ تَشْتَمِلُ عَلَى تَمْيِيزِ نِسْبَةٍ؟","o":["اشْتَرَيْتُ كِيلُوغْرَامًا سُكَّرًا.","امْتَلَأَ الْإِنَاءُ زَيْتًا.","عِنْدِي ثَلَاثُونَ دَفْتَرًا.","قَطَعْتُ مِتْرًا قُمَاشًا."],"a":1,"e":"«زَيْتًا» تُوَضِّحُ بِمَ امْتَلَأَ الْإِنَاءُ، وَلَا تُفَسِّرُ عَدَدًا أَوْ مِقْدَارًا.","p":1},{"unit":8,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «جَعَلَ» بِمَعْنَى «بَدَأَ»؟","o":["جَعَلَ الْخَيَّاطُ الْقُمَاشَ ثَوْبًا.","جَعَلَ الْفَنَّانُ الْحَجَرَ تِمْثَالًا.","جَعَلَ الرَّضِيعُ يَبْكِي.","جَعَلَ الْمُصَمِّمُ الْغُرْفَةَ مَكْتَبًا."],"a":2,"e":"بَدَأَ الرَّضِيعُ يَبْكِي، فَـ«جَعَلَ» هُنَا مِنْ أَفْعَالِ الشُّرُوعِ.","p":1},{"unit":15,"tag":"ن","q":"أَيُّ جُمْلَةٍ تَشْتَمِلُ عَلَى اسْتِثْنَاءٍ مُنْقَطِعٍ؟","o":["عَادَ الرُّكَّابُ إِلَّا رَاكِبًا.","أَنْهَيْتُ الْأَسْئِلَةَ إِلَّا سُؤَالًا.","نَجَا الْبَحَّارَةُ إِلَّا سَفِينَتَهُمْ.","أَكَلْتُ التُّفَّاحَ إِلَّا تُفَّاحَةً."],"a":2,"e":"«سَفِينَتَهُمْ» لَيْسَتْ مِنْ جِنْسِ الْبَحَّارَةِ.","p":1},{"unit":3,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا فِعْلٌ عَلَى «تَفَعَّلَ»؟","o":["تَحَاوَرَ الزَّمِيلَانِ.","تَكَلَّمَ الْمُعَلِّمُ بِهُدُوءٍ.","اِجْتَمَعَ الْفَرِيقُ.","تَدَحْرَجَتِ الْكُرَةُ."],"a":1,"e":"«تَكَلَّمَ» ثُلَاثِيٌّ مَزِيدٌ بِالتَّاءِ وَتَضْعِيفِ الْعَيْنِ.","p":1},{"unit":10,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «نَا» فِي مَحَلِّ جَرٍّ بِالْإِضَافَةِ؟","o":["فَرِحْنَا بِالنَّجَاحِ.","سَاعَدَنَا الْجَارُ.","شَكَرَنَا الْمُعَلِّمُ.","نَظَّفْنَا فَصْلَنَا."],"a":3,"e":"«نَا» فِي «فَصْلَنَا» مُضَافٌ إِلَيْهِ، وَفِي «نَظَّفْنَا» فَاعِلٌ.","p":1},{"unit":17,"tag":"ن","q":"أَيُّ جُمْلَةٍ جُرَّ فِيهَا الْمَمْنُوعُ مِنَ الصَّرْفِ بِالْفَتْحَةِ؟","o":["سَلَّمْتُ عَلَى عُثْمَانَ.","سَلَّمْتُ عَلَى خَالِدٍ.","سِرْتُ فِي الشَّوَارِعِ.","صَلَّيْتُ فِي مَسَاجِدِ الْقَرْيَةِ."],"a":0,"e":"«عُثْمَانَ» مَمْنُوعٌ مِنَ الصَّرْفِ لِلْعَلَمِيَّةِ وَزِيَادَةِ الْأَلِفِ وَالنُّونِ.","p":1},{"unit":14,"tag":"ن","q":"أَيُّ جُمْلَةٍ تَقَدَّمَتْ فِيهَا الْحَالُ عَلَى صَاحِبِهَا؟","o":["مَرَّ بِنَا طِفْلٌ صَغِيرٌ ضَاحِكًا.","مَا مَرَّ بِنَا أَحَدٌ ضَاحِكًا.","مَرَّ بِنَا ضَاحِكًا طِفْلٌ.","مَرَّ بِنَا خَالِدٌ ضَاحِكًا."],"a":2,"e":"«ضَاحِكًا» حَالٌ جَاءَتْ قَبْلَ صَاحِبِهَا «طِفْلٌ».","p":1},{"unit":12,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا «هَلَّا» لِلَّوْمِ عَلَى أَمْرٍ فَاتَ؟","o":["هَلَّا تَزُورُنَا غَدًا؟","هَلْ حَضَرْتَ الدَّرْسَ؟","هَلَّا حَضَرْتَ الدَّرْسَ أَمْسِ؟","لَيْتَكَ حَضَرْتَ الدَّرْسَ."],"a":2,"e":"«هَلَّا» مَعَ الْمَاضِي فِي هَذَا السِّيَاقِ لِلتَّنْدِيمِ.","p":1},{"unit":4,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا «تَفَاعَلَ» بِمَعْنَى التَّظَاهُرِ؟","o":["تَسَابَقَ اللَّاعِبُونَ.","تَبَادَلَ الصَّدِيقَانِ الرَّسَائِلَ.","تَنَاوَمَ الطِّفْلُ وَهُوَ مُسْتَيْقِظٌ.","تَصَافَحَ الزَّمِيلَانِ."],"a":2,"e":"«تَنَاوَمَ» أَيْ أَظْهَرَ النَّوْمَ وَلَمْ يَنَمْ.","p":1},{"unit":1,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا تَحْذِيرٌ بِـ«إِيَّا»؟","o":["عَلَيْكَ بِالصِّدْقِ.","إِيَّاكَ نَسْتَشِيرُ.","مَا أَفْضَلَ الصِّدْقَ!","إِيَّاكَ وَالسَّهَرَ!"],"a":3,"e":"«إِيَّاكَ وَالسَّهَرَ» تَحْذِيرٌ مِنَ السَّهَرِ.","p":1},{"unit":16,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا مُضَارِعٌ مُؤَكَّدٌ بِالنُّونِ فِي جَوَابِ قَسَمٍ؟","o":["وَاللَّهِ لَقَدْ حَضَرْتُ أَمْسِ.","يَا خَالِدُ، اُكْتُبَنَّ الدَّرْسَ.","وَاللَّهِ لَنْ أَتَأَخَّرَ.","وَاللَّهِ لَأَحْضُرَنَّ غَدًا."],"a":3,"e":"«لَأَحْضُرَنَّ» مُضَارِعٌ مُؤَكَّدٌ بِنُونٍ ثَقِيلَةٍ فِي جَوَابِ الْقَسَمِ.","p":1},{"unit":1,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا فِعْلٌ تَعَدَّى بِزِيَادَةِ الْهَمْزَةِ؟","o":["جَلَسَ الطِّفْلُ.","فَرَّحَ الْأَبُ طِفْلَهُ.","قَرَأَ الطِّفْلُ قِصَّةً.","أَجْلَسَ الْأَبُ طِفْلَهُ."],"a":3,"e":"زِيَادَةُ الْهَمْزَةِ حَوَّلَتْ «جَلَسَ» اللَّازِمَ إِلَى «أَجْلَسَ» الْمُتَعَدِّي.","p":1},{"unit":2,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا مَصْدَرٌ عَلَى «مُفَاعَلَةٍ»؟","o":["نَاقَشْنَا الْمَسْأَلَةَ مُنَاقَشَةً هَادِئَةً.","تَعَاوَنَّا تَعَاوُنًا مَثْمِرًا.","أَحْسَنَ الْمُضِيفُ إِحْسَانًا.","رَتَّبْنَا الْقَاعَةَ تَرْتِيبًا."],"a":0,"e":"«مُنَاقَشَةٌ» مَصْدَرُ «نَاقَشَ» عَلَى «مُفَاعَلَةٍ».","p":1},{"unit":10,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا نُونُ الْوِقَايَةِ؟","o":["أَنْتُنَّ تَكْتُبْنَ الدَّرْسَ.","الطَّالِبَانِ يَكْتُبَانِ.","أَرْشَدَنِي الْمُعَلِّمُ.","إِنَّ الطَّالِبَ حَاضِرٌ."],"a":2,"e":"النُّونُ فِي «أَرْشَدَنِي» قَبْلَ يَاءِ الْمُتَكَلِّمِ، وَهِيَ نُونُ الْوِقَايَةِ.","p":1},{"unit":4,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا بَدَلُ اشْتِمَالٍ؟","o":["أَعْجَبَنِي الْخَطِيبُ أُسْلُوبُهُ.","قَرَأْتُ الْمَجَلَّةَ ثُلُثَهَا.","حَضَرَ أَخُوكَ سَعْدٌ.","قَرَأْتُ الْمَقَالَ الْجَدِيدَ."],"a":0,"e":"«أُسْلُوبُهُ» مَعْنًى يَتَّصِفُ بِهِ الْخَطِيبُ، وَلَيْسَ جُزْءًا مِنْهُ.","p":1},{"unit":15,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا اسْتِثْنَاءٌ تَامٌّ مَنْفِيٌّ؟","o":["فَازَ اللَّاعِبُونَ إِلَّا عَلِيًّا.","مَا فَازَ اللَّاعِبُونَ إِلَّا عَلِيٌّ.","مَا فَازَ إِلَّا عَلِيٌّ.","فَازَ عَلِيٌّ وَأَخُوهُ."],"a":1,"e":"ذُكِرَ «اللَّاعِبُونَ» مُسْتَثْنًى مِنْهُ، وَسَبَقَ الْكَلَامَ النَّفْيُ.","p":1},{"unit":17,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا جَمْعٌ عَلَى «مَفَاعِيلَ»؟","o":["قَرَأْتُ الْمَوَاضِيعَ الْجَدِيدَةَ.","نَظَّفْتُ الْمَكَاتِبَ.","قَرَأْتُ الْكُتُبَ.","رَتَّبْتُ الدَّفَاتِرَ."],"a":0,"e":"«مَوَاضِيعُ» عَلَى «مَفَاعِيلَ»، وَفِيهَا يَاءٌ سَاكِنَةٌ قَبْلَ الْحَرْفِ الْأَخِيرِ.","p":1},{"unit":11,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا مَصْدَرُ هَيْئَةٍ عَلَى «فِعْلَةٍ»؟","o":["مَشَى الرَّجُلُ مِشْيَةَ الْوَاثِقِ.","قَفَزَ الطِّفْلُ قَفْزَةً.","ضَرَبَ الْحَدَّادُ ضَرْبَتَيْنِ.","جَلَسَ الضَّيْفُ جُلُوسًا."],"a":0,"e":"«مِشْيَةٌ» بِكَسْرِ الْمِيمِ تُبَيِّنُ كَيْفِيَّةَ الْمَشْيِ.","p":1},{"unit":5,"tag":"ن","q":"أَيُّ جُمْلَةٍ أُضِيفَ فِيهَا الظَّرْفُ إِلَى جُمْلَةٍ فِعْلِيَّةٍ؟","o":["غَادَرْتُ عِنْدَ الْغُرُوبِ.","غَادَرْتُ حِينَ رَنَّ الْهَاتِفُ.","غَادَرْتُ قَبْلَ الْفَجْرِ.","غَادَرْتُ بَعْدَ الصَّلَاةِ."],"a":1,"e":"أُضِيفَ «حِينَ» إِلَى جُمْلَةِ «رَنَّ الْهَاتِفُ» فِي مَحَلِّ جَرٍّ.","p":1},{"unit":15,"tag":"ن","q":"أَيُّ جُمْلَةٍ فِيهَا اسْتِثْنَاءٌ مُفَرَّغٌ وَمَا بَعْدَ «إِلَّا» فَاعِلٌ؟","o":["مَا كَلَّمْتُ إِلَّا سَعِيدًا.","مَا مَرَرْتُ إِلَّا بِسَعِيدٍ.","مَا اتَّصَلَ إِلَّا سَعِيدٌ.","اتَّصَلَ الْأَصْدِقَاءُ إِلَّا سَعِيدًا."],"a":2,"e":"«سَعِيدٌ» فَاعِلُ «اتَّصَلَ»، وَلَمْ يُذْكَرْ مُسْتَثْنًى مِنْهُ.","p":1},{"unit":8,"tag":"ن","q":"أَيُّ جُمْلَةٍ جَاءَتْ فِيهَا «قَدْ» بَعْدَ وَاوِ الْحَالِ وَقَبْلَ مَاضٍ مُثْبَتٍ؟","o":["دَخَلْتُ الْقَاعَةَ وَالدَّرْسُ مُسْتَمِرٌّ.","دَخَلْتُ الْقَاعَةَ وَقَدْ بَدَأَ الدَّرْسُ.","دَخَلْتُ الْقَاعَةَ وَمَا بَدَأَ الدَّرْسُ.","دَخَلْتُ الْقَاعَةَ وَالْمُعَلِّمُ يَشْرَحُ."],"a":1,"e":"«بَدَأَ» مَاضٍ مُثْبَتٌ، وَجَاءَتْ «قَدْ» بَعْدَ وَاوِ الْحَالِ.","p":1},{"unit":14,"tag":"ن","q":"أَيُّ جُمْلَةٍ مِنَ الْجُمَلِ الْآتِيَةِ تَشْتَمِلُ عَلَى حَالٍ؟","o":["سَافَرْتُ رَغْبَةً فِي التَّعَلُّمِ.","ابْتَسَمَتِ الطِّفْلَةُ ابْتِسَامَةً خَفِيفَةً.","اشْتَرَيْتُ كِيلُوغْرَامًا عَسَلًا.","رَجَعَ الْمُسَافِرُ مُتْعَبًا."],"a":3,"e":"«مُتْعَبًا» حَالٌ؛ لِأَنَّهَا تُبَيِّنُ هَيْئَةَ الْمُسَافِرِ عِنْدَ رُجُوعِهِ.","p":1},{"unit":6,"tag":"ص","q":"أَيُّ جُمْلَةٍ فِيهَا صِيغَةُ مُبَالَغَةٍ عَلَى «فَعَّالٍ»؟","o":["الطَّالِبُ قَارِئٌ لِلْكِتَابِ.","الطَّالِبُ قَرَّاءٌ لِلْكُتُبِ.","الطَّالِبُ كَاتِبٌ لِلْمَقَالِ.","الطَّالِبُ مَشْغُولٌ بِالْعَمَلِ."],"a":1,"e":"«قَرَّاءٌ» عَلَى «فَعَّالٍ»، وَتَدُلُّ عَلَى كَثْرَةِ الْقِرَاءَةِ.","p":1},{"unit":17,"tag":"ن","q":"أَيُّ جُمْلَةٍ جُرَّ فِيهَا الْمَمْنُوعُ مِنَ الصَّرْفِ بِالْكَسْرَةِ بِسَبَبِ «أَلْ»؟","o":["جَلَسْتُ فِي الْحَدَائِقِ الْقَرِيبَةِ.","جَلَسْتُ فِي حَدَائِقَ قَرِيبَةٍ.","جَلَسْتُ فِي حَدَائِقِ الْحَيِّ.","جَلَسْتُ فِي حَدِيقَةٍ قَرِيبَةٍ."],"a":0,"e":"«الْحَدَائِقِ» دَخَلَتْهَا «أَلْ»، أَمَّا «حَدَائِقِ الْحَيِّ» فَجُرَّتْ بِالْكَسْرَةِ بِسَبَبِ الْإِضَافَةِ.","p":1}]}};
+function escapeText(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"})[c]);}
+function isTrueFalse(x){return x.o.length===2&&/^(صواب|نعم|صحيح)$/.test(x.o[0])&&/^(خطأ|لا)$/.test(x.o[1]);}
+let state={key:null,items:[],i:0,score:0,selected:null,checked:false};
+
+function show(id){
+  ['home','quiz','result','review'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function labelFor(key){return exams[key]?.title||'اختبار شامل'}
+function prepared(key){
+  return exams[key].questions.map((x,i)=>({...x,lesson:key,n:i+1}));
+}
+function startLesson(key){
+  state={key,items:prepared(key),i:0,score:0,selected:null,checked:false};
+  show('quiz');render();
+}
+function render(){
+  const x=state.items[state.i];
+  const pct=Math.round((state.i/state.items.length)*100);
+  const letters=['أ','ب','ج','د'];
+  document.getElementById('quiz').innerHTML=
+    '<div class="toprow"><span class="pill real">'+labelFor(x.lesson)+'</span><span class="small">'+(state.i+1)+' / '+state.items.length+'</span></div><p><button class="navlink" onclick="showReviewMenu()">الرجوع إلى قائمة الاختبارات</button></p>'+
+    '<div class="progress"><div class="bar" style="width:'+pct+'%"></div></div>'+
+    '<div class="qnum">سؤال '+x.n+' · '+x.p+' من الدرجات</div><div class="q">'+escapeText(x.q)+'</div>'+
+    '<div id="opts">'+x.o.map((v,i)=>'<button class="option" data-i="'+i+'"><b style="margin-left:8px">'+(isTrueFalse(x)?'':letters[i]+' — ')+'</b>' +escapeText(v)+ '</button>').join('')+'</div>'+
+    '<button id="check" class="btn" disabled>تحقق من الإجابة</button><div id="fb"></div>';
+  document.querySelectorAll('.option').forEach(el=>el.onclick=()=>pick(el,Number(el.dataset.i)));
+  document.getElementById('check').onclick=check;
+}
+function pick(el,idx){
+  if(state.checked)return;
+  state.selected=idx;
+  document.querySelectorAll('.option').forEach(n=>n.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('check').disabled=false;
+}
+function check(){
+  if(state.selected===null||state.checked)return;
+  state.checked=true;
+  const x=state.items[state.i],ok=state.selected===x.a;
+  if(ok)state.score+=x.p;
+  document.querySelectorAll('.option').forEach(el=>{
+    const i=Number(el.dataset.i);
+    if(i===x.a)el.classList.add('correct');
+    else if(i===state.selected&&!ok)el.classList.add('wrong');
+    el.disabled=true;
+  });
+  document.getElementById('fb').innerHTML=
+    '<div class="feedback '+(ok?'good':'bad')+'">'+(ok?'✅ إجابة صحيحة':'❌ إجابة خاطئة')+
+    '<div class="answer">الإجابة الصحيحة: '+escapeText(x.o[x.a])+'</div><p class="answer">الشَّرْحُ: '+escapeText(x.e)+'</p></div>'+
+    '<button id="next" class="btn secondary" style="margin-top:12px">'+(state.i+1===state.items.length?'عرض النتيجة':'السؤال التالي')+'</button>';
+  document.getElementById('next').onclick=next;
+  document.getElementById('check').classList.add('hidden');
+}
+function next(){
+  state.i++;state.selected=null;state.checked=false;
+  if(state.i>=state.items.length)return finish();
+  render();
+}
+function finish(){
+  show('result');
+  document.getElementById('result').innerHTML=
+    '<h2>النتيجة</h2><div class="score">'+state.score+' / '+state.items.reduce((sum,x)=>sum+x.p,0)+'</div>'+
+    '<button id="again" class="btn">أعد الاختبار</button>'+
+    '<button id="answers" class="btn gold" style="margin-top:10px">راجع الأسئلة والأجوبة</button>'+
+    '<button id="homeBtn" class="btn ghost" style="margin-top:10px">الرجوع إلى القائمة</button>';
+  document.getElementById('again').onclick=()=>startLesson(state.key);
+  document.getElementById('answers').onclick=()=>renderReview(state.key);
+  document.getElementById('homeBtn').onclick=showReviewMenu;
+}
+function showReviewMenu(){location.hash='';show('home')}
+function renderReview(key){
+  const e=exams[key],letters=['أ','ب','ج','د'];
+  document.getElementById('review').innerHTML=
+    '<div class="toprow"><h2 style="margin:0">الأسئلة والأجوبة – '+e.title+'</h2><button class="btn ghost" style="width:auto;padding:9px 12px" onclick="showReviewMenu()">رجوع</button></div>'+
+    e.questions.map((x,i)=>
+      '<div class="review-item"><h3>سؤال '+(i+1)+': '+escapeText(x.q)+'</h3>'+
+      '<ol class="review-options" style="list-style:none">'+x.o.map((v,j)=>'<li>'+(isTrueFalse(x)?'':letters[j]+' — ') +escapeText(v)+ '</li>').join('')+'</ol>'+
+      '<div class="review-answer">الإجابة الصحيحة: '+escapeText(x.o[x.a])+'</div><p class="answer">الشَّرْحُ: '+escapeText(x.e)+'</p></div>'
+    ).join('');
+  show('review');
+}
+
+function navigate(){const key=location.hash.slice(1);if(Object.hasOwn(exams,key))startLesson(key);else show('home');}
+window.addEventListener('hashchange',navigate);
+navigate();</script></body></html>
